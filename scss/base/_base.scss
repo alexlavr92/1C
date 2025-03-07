@@ -1,0 +1,286 @@
+// Global CSS
+
+* {
+    box-sizing: $box-border;
+}
+
+html {
+    font-size: $body-font-size;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.rub {
+    text-transform: lowercase;
+    font-family: 'als_rublregular';
+}
+
+body {
+    background-color: $color-bg-main;
+    color: $color-text-body;
+    font-family: $font-body;
+    font-weight: $font-normal;
+    // position: relative;
+    -webkit-overflow-scrolling: touch;
+    font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    // -webkit-touch-callout: none;
+    // -webkit-user-select: none;
+    //font-size: $body-font-size + 0px;
+    line-height: $body-line-height + '%';
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    @include flex-column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+
+    &.grey {
+        background: $color-bg-grey;
+    }
+
+    &+section {
+        padding: 75px 0;
+
+        &.grey {
+            margin-top: 75px;
+            padding: 150px 0;
+        }
+    }
+}
+
+.w-big {
+    width: 70%;
+
+}
+
+
+.new-container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    transition: $transition;
+    color: inherit;
+}
+
+
+
+
+.heading {
+    font-family: $font-title;
+}
+
+
+
+
+.link {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,
+.h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: 0.05em;
+    font-family: $font-title;
+    text-transform: uppercase;
+}
+
+
+
+h2 {
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.05em;
+    font-family: $font-title;
+    text-transform: uppercase;
+}
+
+// h3 {}
+
+h4 {}
+
+
+input[type="radio"],
+input[type="file"],
+input[type="checkbox"] {
+    display: none;
+}
+
+
+// body::-webkit-scrollbar {
+//     width: 10px;
+//     /* ширина scrollbar */
+// }
+
+// body::-webkit-scrollbar-track {
+//     background: #F2EFE5;
+//     /* цвет дорожки */
+// }
+
+// body::-webkit-scrollbar-thumb {
+//     background-color: #80766F;
+//     /* цвет плашки */
+//     border-radius: 3px;
+//     /* закругления плашки */
+//     /* padding вокруг плашки */
+// }
+
+.btn-tg.btn {
+    border-radius: 500px;
+    padding: 15px 40px;
+    border: 2px solid $color-bg-blue;
+    color: $color-bg-blue;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: $font-bold;
+    font-size: .6rem;
+    letter-spacing: 0.05em;
+    transition: $transition;
+
+    &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 25px;
+        height: 25px;
+        @include bg-style;
+        background-image: url(../../media/icons/telegram.svg);
+        margin-right: 10px;
+        transition: $transition;
+    }
+
+    &:hover,
+    &:active {
+        background: $color-bg-blue;
+        color: $color-text-white;
+
+        &:before {
+            background-image: url(../../media/icons/telegram-white.svg);
+        }
+    }
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 15px 50px;
+    outline: none;
+    border: none;
+    transition: $transition;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    &.btn-blue {
+        background: $color-bg-blue;
+        color: $color-text-white;
+
+        &:hover,
+        &:active {
+            background: $color-bg-hover;
+        }
+    }
+
+    &.btn-contur {
+        border: 1px solid $color-bg-blue;
+        color: $color-bg-blue;
+
+        &:hover,
+        &:active {
+            background: $color-bg-blue;
+            color: $color-text-white;
+        }
+    }
+}
+
+.btn-more {
+    color: $color-bg-blue;
+    font-size: .7rem;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid;
+
+    &:hover,
+    &:active {
+        border-color: transparent;
+    }
+}
+
+.mobile-only {
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y,
+.scrollbar-dynamic>.scroll-element.scroll-y:hover .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element.scroll-y.scroll-draggable .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element.scroll-y .scroll-bar {
+    width: 3px;
+    min-width: 3px;
+    opacity: 1;
+}
+
+
+.scrollbar-dynamic>.scroll-element .scroll-element_size {
+    opacity: 1;
+    background: rgba(#012843, .1);
+}
+
+.scrollbar-dynamic>.scroll-element .scroll-bar {
+    background: $color-bg-blue;
+}
+
+.scroll-wrapper>.scroll-content {
+    padding-right: 40px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y .scroll-bar {
+    cursor: pointer;
+}
+
+// End Global CSS

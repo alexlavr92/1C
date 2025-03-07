@@ -1,0 +1,38 @@
+// TYPOGRAPHY
+// ---------------------------------------------------------------
+$font-body: "Nunito";
+// $font-title: "Doorman";
+$font-normal: normal;
+$font-light: 300;
+$font-semibold: 600;
+$font-bold: bold;
+$font-title: 'Proxima Nova';
+// $font-tertiary: "Oswald", sans-serif;
+
+$min-font-size: 16;
+$max-font-size: 24;
+// $root-font-size: 16;
+$body-font-size: calcFluidFontSize($min-font-size, $max-font-size, 320, 1920, px);
+$body-line-height: 140;
+
+
+// COLORS
+$color-bg-main: #ffffff;
+$color-bg-grey: #F5F5F5;
+$color-bg-blue: #0A509D;
+$color-bg-hover: #006bdd;
+
+
+$color-text-white: #FFFFFF;
+$color-text-body: #012843;
+// ---------------------------------------------------------------
+
+$placeholder-color: rgba(29, 36, 42, 0.7);
+
+// Animation
+// ---------------------------------------------------------------
+
+$transition: all .4s ease;
+
+// Box Sizing
+$box-border: border-box;

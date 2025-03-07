@@ -1,0 +1,117 @@
+.about-us {
+    padding-top: 150px;
+}
+
+.about-us-inner {
+    align-items: center;
+
+    h2 {
+        flex: 1;
+    }
+
+    &+.about-us-inner {
+        margin: 150px 0;
+        position: relative;
+        // margin-bottom: 10%;
+
+        .img-wrapper {
+            left: 0;
+            top: 0;
+            width: 42%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .w-big {
+            margin-left: auto;
+        }
+    }
+}
+
+.about-us-columns {
+    gap: 30px;
+
+}
+
+.about-us-column {
+    // @include flex-column;
+    gap: 30px;
+    width: calc(50% - 15px);
+
+    >div {
+        padding: 40px;
+        background: $color-bg-grey;
+        border-radius: 20px;
+
+        &.flex-block {
+            @include flex-column;
+            height: 100%;
+        }
+    }
+
+    .title {
+        font-size: .9rem;
+        line-height: 159%;
+        letter-spacing: 0.05em;
+        // color: $color-bg-blue;
+        font-family: $font-title;
+        font-weight: $font-semibold;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+
+    .text {
+        font-size: .7rem;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        color: rgba($color-text-body, 0.6);
+
+        >a {
+            color: $color-bg-blue;
+            border-bottom: 1px solid;
+            line-height: 100%;
+
+            &:hover,
+            &:active {
+                border-color: transparent;
+            }
+        }
+    }
+
+    .list {
+        li:not(:first-child) {
+            margin-top: 5px;
+        }
+
+        li {
+            align-items: center;
+            gap: 15px;
+            font-size: .8rem;
+        }
+
+        &+.text {
+            margin-top: auto;
+
+        }
+    }
+}
+
+
+.about-us-mission {
+    width: 50%;
+    margin: 0 auto;
+    margin-left: 40%;
+
+    h2 {
+        padding-bottom: 20px;
+    }
+
+    .text {
+        font-size: .7rem;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        color: rgba($color-text-body, 0.6);
+    }
+}

@@ -1,0 +1,174 @@
+.form-inner {
+    .title {
+        font-size: 22px;
+        line-height: 159%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-family: $font-title;
+        padding-bottom: 40px;
+
+        >span {
+            color: $color-bg-blue;
+            font-weight: $font-bold;
+        }
+    }
+
+    .form-default {
+        align-items: flex-end;
+        gap: 30px;
+        row-gap: 0;
+    }
+
+    .btn {
+        margin-left: auto;
+    }
+
+    .default-input-wrapper {
+        width: 400px
+    }
+
+    .request-success-wrapper {
+        font-size: 22px;
+        line-height: 127%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        display: none;
+
+        span {
+            display: block;
+            position: relative;
+            padding-left: 50px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                @include bg-style;
+                background-image: url(../../media/icons/success.svg);
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.default-input-wrapper {
+
+    &.required {
+        position: relative;
+    }
+
+    .invalid-text {
+        position: absolute;
+        top: 100%;
+        margin-top: 5px;
+        color: red;
+        font-size: 12px;
+        left: 0;
+        width: 100%;
+    }
+
+    >label {
+        color: rgba($color-text-body, .7);
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .input-default {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 40px;
+        overflow: hidden;
+        border-radius: 50px;
+        outline: none;
+        border: 1px solid transparent;
+        background: $color-bg-grey;
+        font-size: 14px;
+        @include placeholder-color(rgba($color-text-body, .3));
+        transition: $transition;
+
+        &:hover,
+        &:active,
+        &.active {
+            border-color: $color-bg-blue;
+        }
+    }
+
+    &.invalid .input-default {
+        border-color: red;
+    }
+
+    &.--conf {
+        width: 100%;
+        margin-top: 40px;
+
+        .default-checkbox_label {
+            font-size: 12px;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            padding-bottom: 0;
+
+            >a {
+                color: $color-bg-blue;
+                border-bottom: 1px solid;
+
+                &:hover {
+                    border-color: transparent;
+                }
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+            }
+
+            &:before {
+                width: 15px;
+                height: 15px;
+                border-radius: 5px;
+                border: 1px solid $color-text-body;
+                left: 0;
+                top: 1px;
+                transition: $transition;
+            }
+
+            &:after {
+                width: 8px;
+                height: 3px;
+                border-left: 2px solid $color-text-white;
+                border-bottom: 2px solid $color-text-white;
+                transform: rotate(-45deg) translateX(-50%);
+                top: 2px;
+                left: 7px;
+                transition: $transition;
+                opacity: 0;
+            }
+
+        }
+
+        input:checked+.default-checkbox_label {
+            &:before {
+                border-color: transparent;
+                background: $color-text-body;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &.invalid .default-checkbox_label:before {
+            border-color: red;
+
+        }
+    }
+
+}

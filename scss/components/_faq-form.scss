@@ -1,0 +1,118 @@
+.faq-form {
+    padding: 85px 0;
+    margin: 75px 0;
+    background: linear-gradient(85deg, #4650f6 0%, #141b8c 100%);
+    position: relative;
+
+    .new-container {
+        position: relative;
+    }
+
+    .img-wrapper {
+        position: absolute;
+        right: 0;
+        top: -4vw;
+        width: 37vw;
+
+    }
+}
+
+.faq-form-inner {
+    width: 40%;
+
+    .title {
+        color: $color-text-white;
+        font-weight: $font-semibold;
+        font-family: $font-title;
+        font-size: 1.7rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+    }
+
+    .subtitle {
+        font-size: .6rem;
+        color: $color-text-white;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        margin-bottom: 40px;
+    }
+
+    .form-default {
+        // margin-top: 40px;
+        @include flex-column;
+        gap: 30px;
+
+        .default-input-wrapper {
+            width: 100%;
+            max-width: 400px;
+
+            >label {
+                color: $color-text-white;
+            }
+
+            .input-default {
+                border: 1px solid rgba($color-text-white, .5);
+                color: $color-text-white;
+                background: transparent;
+                @include placeholder-color(rgba($color-text-white, .3));
+
+                &:hover,
+                &:active,
+                &.active {
+                    border-color: $color-text-white;
+                }
+            }
+
+            &.--conf {
+                margin-top: 0;
+
+                .default-checkbox_label>a {
+                    color: $color-text-white;
+                }
+
+                .default-checkbox_label:before {
+                    border-color: $color-text-white;
+                }
+
+                &.invalid .default-checkbox_label:before {
+                    border-color: red;
+                }
+
+                input:checked+.default-checkbox_label:before {
+                    background: $color-text-white;
+                }
+
+                input:checked+.default-checkbox_label:after {
+                    border-color: $color-text-body;
+                }
+            }
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+            background: transparent;
+            border: 1px solid $color-text-white;
+            color: $color-text-white;
+            font-weight: $font-bold;
+
+            &:hover,
+            &:active {
+                background: $color-text-white;
+                color: $color-text-body;
+
+            }
+        }
+
+    }
+
+    .request-success-wrapper {
+        color: $color-text-white;
+        font-size: 1rem;
+        line-height: 125%;
+        letter-spacing: 0.03em;
+        display: none;
+    }
+}

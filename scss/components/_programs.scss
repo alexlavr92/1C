@@ -1,0 +1,98 @@
+.programs {
+    h2 {
+        padding-bottom: 50px;
+    }
+}
+
+.tab-wrapper {
+    gap: 140px;
+
+    .tabs-switchers {
+        // padding-right: 140px;
+        @include flex-column;
+        gap: 40px;
+        max-height: 800px;
+        overflow: auto;
+        flex-wrap: nowrap;
+        flex: 1;
+
+        >a {
+            padding: 20px 0;
+            font-size: .8rem;
+            letter-spacing: 0.03em;
+            color: rgba($color-text-body, .5);
+            font-family: $font-title;
+            // padding-right: 30px;
+            font-weight: $font-semibold;
+
+            &.active,
+            &:not(.active):hover,
+            &:not(.active):active {
+                color: $color-bg-blue;
+
+            }
+        }
+    }
+
+}
+
+.programs-items {
+    gap: 30px;
+
+    .btn-more-wrapper {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .btn-more {
+        color: $color-bg-blue;
+        font-size: .7rem;
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid;
+
+        &:hover,
+        &:active {
+            border-color: transparent;
+        }
+    }
+}
+
+.programs-item {
+    @include flex-column;
+    padding: 25px 20px;
+    background: $color-bg-main;
+    border-radius: 20px;
+    width: calc(33.3% - 20px);
+    min-height: 263px;
+
+    &.hide {
+        display: none;
+    }
+
+    .title {
+        font-size: .7rem;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+    }
+
+    .price {
+        margin-top: auto;
+        width: 100%;
+        align-items: center;
+
+        >div {
+            font-family: $font-title;
+            font-weight: $font-semibold;
+            font-size: .9rem;
+            color: $color-bg-blue;
+            letter-spacing: 0.03em;
+        }
+
+        >a {
+            margin-left: auto;
+            padding: 10px 40px;
+            font-weight: $font-bold;
+            font-size: .6rem;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.opportunities {
+    .heading-wrapper {
+        align-items: center;
+    }
+
+    .switchers {
+        margin-left: 80px;
+        border-radius: 50px;
+        background: $color-bg-grey;
+        /*  padding: 10px 40px; */
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+        font-size: .8rem;
+        letter-spacing: 0.03em;
+
+        position: relative;
+        z-index: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            border-radius: 50px;
+            background: $color-bg-blue;
+            z-index: -1;
+            transition: $transition;
+        }
+
+        &.switchers.active:before {
+            transform: translateX(100%);
+        }
+    }
+
+    .switcher {
+        padding: 15px 40px;
+        color: $color-bg-blue;
+
+        &.active {
+            color: $color-text-white;
+        }
+    }
+}

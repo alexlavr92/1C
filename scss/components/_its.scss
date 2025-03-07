@@ -1,0 +1,141 @@
+.its {
+    h2 {
+        padding-bottom: 15px;
+    }
+
+    .sub-title {
+        font-size: .6rem;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        color: rgba($color-text-body, .6);
+        padding-bottom: 40px;
+    }
+}
+
+
+.its-items {
+    gap: 30px;
+}
+
+.its-item {
+    @include flex-column;
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    background: $color-bg-main;
+    flex: 1;
+
+    .title {
+        font-family: $font-title;
+        font-weight: $font-semibold;
+        font-size: .95rem;
+        margin-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .text {
+        font-size: .7rem;
+        color: rgba($color-text-body, .8);
+        line-height: 150%;
+        letter-spacing: 0.03em;
+    }
+}
+
+.its-price-wrapper {
+    margin-top: 70px;
+
+    >.title {
+        font-size: 1rem;
+        line-height: 159%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-family: $font-title;
+        font-weight: $font-semibold;
+        padding-bottom: 40px;
+    }
+}
+
+.its-price-items {
+    padding: 40px;
+    background: $color-bg-grey;
+    border-radius: 20px;
+
+    .btn-wrapper {
+        margin-top: 20px;
+        padding-top: 40px;
+        border-top: 1px solid rgba($color-text-body, .1);
+        text-align: right;
+    }
+}
+
+.its-price-item {
+    gap: 5rem;
+    align-items: center;
+
+    >* {
+        flex: 1;
+    }
+
+    >.title {
+        font-family: $font-title;
+        font-weight: $font-semibold;
+        font-size: .8rem;
+        line-height: 136%;
+        letter-spacing: 0.03em;
+        flex-grow: 1.2;
+    }
+
+    .list {
+        flex: 1;
+        flex-grow: .8;
+
+        li {
+            position: relative;
+            padding-left: 15px;
+            font-weight: 600;
+            font-size: .7rem;
+            line-height: 150%;
+            letter-spacing: 0.03em;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 9px;
+                left: 0;
+
+                width: 6px;
+                height: 6px;
+                background: $color-text-body;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    >.price {
+        align-items: center;
+        gap: 40px;
+        flex-grow: 1;
+        font-size: .8rem;
+        line-height: 136%;
+        letter-spacing: 0.03em;
+
+        >.this-number {
+            color: $color-bg-blue;
+            font-family: $font-title;
+            font-weight: $font-semibold;
+        }
+
+        .btn {
+            padding: 10px 40px;
+            font-size: .6rem;
+            margin-left: auto;
+        }
+    }
+
+    &+.its-price-item {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba($color-text-body, .1);
+    }
+
+}
