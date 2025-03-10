@@ -74,9 +74,9 @@ jQuery(document).ready(function ($) {
 
 
     // Функционал слайдера
-    const MainSlider = {
+    const ClientsSlider = {
         defaultOptions: {
-            sliderOuter: $('.slider-outer')
+            sliderOuter: $('.our-cliens-slider')
         },
         init: function (options) {
             var options = $.extend(this.defaultOptions, options)
@@ -89,35 +89,39 @@ jQuery(document).ready(function ($) {
 
             let swiper = new Swiper(sliderContainer, {
                 slidesPerView: 'auto',
-                // spaceBetween: 80,
-                slidesPerGroup: 3,
+                spaceBetween: 30,
+                // slidesPerGroup: 3,
                 speed: 1000,
-                lazy: true,
+
+                // lazy: true,
                 watchOverflow: true,
                 watchSlidesVisibility: true,
                 touchReleaseOnEdges: true,
                 // loop: true,
+                // autoplay: {
+                //     delay: 5000,
+                // },
                 grabCursor: true,
                 navigation: {
                     nextEl: NextArrow,
                     prevEl: PrevArrow,
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    type: 'bullets',
-                },
-                breakpoints: {
-                    1199: {
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                    },
-                    767: {
-                        spaceBetween: 15,
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                    },
-                },
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                //     type: 'bullets',
+                // },
+                // breakpoints: {
+                //     1199: {
+                //         slidesPerView: 1,
+                //         slidesPerGroup: 1,
+                //     },
+                //     767: {
+                //         spaceBetween: 15,
+                //         slidesPerView: 1,
+                //         slidesPerGroup: 1,
+                //     },
+                // },
                 // autoplay: {
                 //     delay: 5000,
                 //     disableOnInteraction: false,
@@ -128,8 +132,8 @@ jQuery(document).ready(function ($) {
 
 
     }
-    if ($('.slider-outer').length) {
-        MainSlider.init()
+    if ($('.our-cliens-slider').length) {
+        ClientsSlider.init()
     }
     // ------------------------------------
 
@@ -670,6 +674,7 @@ jQuery(document).ready(function ($) {
         Programs.hideProgramsItems()
     }
 
+    const OppItemsWrappers = $('.opportunities-items')
     $('body').on('click', '.opportunities .switcher:not(.active)', function (e) {
         e.preventDefault()
         const $this = $(this),
@@ -678,6 +683,13 @@ jQuery(document).ready(function ($) {
         $this.siblings('.active').removeClass('active')
         $this.closest('.switchers').toggleClass('active')
         console.log($thisIndex)
+        OppItemsWrappers.hide().removeClass('active')
+        OppItemsWrappers.eq($thisIndex).fadeIn({
+            start: function () {
+                $(this).css('display', 'flex')
+                $(this).addClass('active')
+            }
+        })
     })
 }) // end ready
 

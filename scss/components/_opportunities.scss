@@ -1,6 +1,7 @@
 .opportunities {
     .heading-wrapper {
         align-items: center;
+        margin-bottom: 70px;
     }
 
     .switchers {
@@ -42,5 +43,43 @@
         &.active {
             color: $color-text-white;
         }
+    }
+}
+
+.opportunities-items {
+    margin-top: 70px;
+    gap: 30px;
+
+    &:not(.active) {
+        display: none;
+    }
+}
+
+.opportunities-item {
+    width: calc(25% - 22.5px);
+    border-radius: 20px;
+    background: $color-bg-grey;
+    padding: 40px;
+    padding-bottom: 28px;
+    gap: 30px;
+    @include flex-column;
+
+    .img-wrapper {
+        width: 50px;
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .text {
+        font-family: $font-title;
+
+        font-size: .7rem;
+        line-height: 133%;
+        letter-spacing: 0.03em;
     }
 }

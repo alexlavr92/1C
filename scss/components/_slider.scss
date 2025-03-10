@@ -1,0 +1,38 @@
+.our-clients {
+    h2 {
+        padding-bottom: 70px;
+    }
+}
+
+.our-cliens-slider {
+    position: relative;
+
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 327px;
+        height: 180px;
+        border-radius: 20px;
+        border: 1px solid #F5F5F5;
+        position: relative;
+
+        img {
+            max-width: 50%;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .swiper-navigation {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        margin-bottom: 70px;
+        gap: 50px;
+    }
+}

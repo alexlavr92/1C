@@ -47,6 +47,10 @@ section {
 
     &.grey {
         background: $color-bg-grey;
+
+        &+section {
+            padding-top: 150px;
+        }
     }
 
     &+section {
@@ -281,6 +285,58 @@ input[type="checkbox"] {
 
 .scrollbar-dynamic>.scroll-element.scroll-y .scroll-bar {
     cursor: pointer;
+}
+
+
+
+.swiper-navigation {
+    .swiper-arrow {
+        width: 50px;
+        height: 20px;
+        position: relative;
+
+        transition: $transition;
+
+        &:not(.swiper-button-disabled) {
+            cursor: pointer;
+        }
+
+        &.swiper-button-disabled {
+            opacity: .5;
+        }
+
+        >span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 2px;
+            background: $color-bg-blue;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                transform: rotate(45deg);
+            }
+        }
+
+        &.--prev>span:before {
+            border-left: 2px solid $color-bg-blue;
+            border-bottom: 2px solid $color-bg-blue;
+            left: 0;
+            top: -4px;
+        }
+
+        &.--next>span:before {
+            border-top: 2px solid $color-bg-blue;
+            border-right: 2px solid $color-bg-blue;
+            right: 0;
+            top: -4px;
+        }
+    }
 }
 
 // End Global CSS

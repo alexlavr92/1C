@@ -116,3 +116,70 @@
         display: none;
     }
 }
+
+.faq-form2 {
+    margin-bottom: 0;
+    overflow: hidden;
+
+    .faq-form-inner {
+        margin-left: auto;
+        padding: 50px;
+        border-radius: 20px;
+        background: $color-text-white;
+
+        .title {
+            color: $color-text-body;
+            font-size: 1.5rem;
+        }
+
+        .form-default {
+            .default-input-wrapper {
+                >label {
+                    color: rgba($color-text-body, .7);
+                }
+
+                .input-default {
+                    background: $color-bg-grey;
+                    color: $color-text-body;
+                    @include placeholder-color(rgba($color-text-body, .3));
+                }
+
+                &.--conf {
+                    >label {
+                        color: rgba($color-text-body, .7);
+
+                        &:before {
+                            border-color: $color-text-body;
+                        }
+                    }
+
+                    .default-checkbox_label>a {
+                        color: $color-text-body;
+                    }
+                }
+            }
+
+            .btn {
+                color: $color-text-white;
+                background: $color-text-body;
+
+                &:hover,
+                &:active {
+                    background: #006bdd;
+                }
+            }
+        }
+
+        .request-success-wrapper {
+            color: $color-text-body;
+        }
+    }
+
+    .img-wrapper {
+        left: 0;
+        /*   bottom: 0; */
+        right: auto;
+        top: 0;
+    }
+
+}

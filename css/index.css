@@ -532,6 +532,9 @@ section {
 section.grey {
   background: #F5F5F5;
 }
+section.grey + section {
+  padding-top: 150px;
+}
 section + section {
   padding: 75px 0;
 }
@@ -715,6 +718,50 @@ input[type=checkbox] {
 
 .scrollbar-dynamic > .scroll-element.scroll-y .scroll-bar {
   cursor: pointer;
+}
+
+.swiper-navigation .swiper-arrow {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.swiper-navigation .swiper-arrow:not(.swiper-button-disabled) {
+  cursor: pointer;
+}
+.swiper-navigation .swiper-arrow.swiper-button-disabled {
+  opacity: 0.5;
+}
+.swiper-navigation .swiper-arrow > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2px;
+  background: #0A509D;
+}
+.swiper-navigation .swiper-arrow > span:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.swiper-navigation .swiper-arrow.--prev > span:before {
+  border-left: 2px solid #0A509D;
+  border-bottom: 2px solid #0A509D;
+  left: 0;
+  top: -4px;
+}
+.swiper-navigation .swiper-arrow.--next > span:before {
+  border-top: 2px solid #0A509D;
+  border-right: 2px solid #0A509D;
+  right: 0;
+  top: -4px;
 }
 
 header {
@@ -1696,10 +1743,94 @@ header.sticky .header-bottom {
   display: none;
 }
 
+.faq-form2 {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.faq-form2 .faq-form-inner {
+  margin-left: auto;
+  padding: 50px;
+  border-radius: 20px;
+  background: #FFFFFF;
+}
+.faq-form2 .faq-form-inner .title {
+  color: #012843;
+  font-size: 1.5rem;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper > label {
+  color: rgba(1, 40, 67, 0.7);
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default {
+  background: #F5F5F5;
+  color: #012843;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default::-webkit-input-placeholder {
+  color: rgba(1, 40, 67, 0.3);
+  opacity: 0.7;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:-moz-placeholder {
+  color: rgba(1, 40, 67, 0.3);
+  opacity: 0.7;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default::-moz-placeholder {
+  color: rgba(1, 40, 67, 0.3);
+  opacity: 0.7;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:-ms-input-placeholder {
+  color: rgba(1, 40, 67, 0.3);
+  opacity: 0.7;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:focus:-moz-placeholder {
+  opacity: 0;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:focus::-moz-placeholder {
+  opacity: 0;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper .input-default:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper.--conf > label {
+  color: rgba(1, 40, 67, 0.7);
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper.--conf > label:before {
+  border-color: #012843;
+}
+.faq-form2 .faq-form-inner .form-default .default-input-wrapper.--conf .default-checkbox_label > a {
+  color: #012843;
+}
+.faq-form2 .faq-form-inner .form-default .btn {
+  color: #FFFFFF;
+  background: #012843;
+}
+.faq-form2 .faq-form-inner .form-default .btn:hover, .faq-form2 .faq-form-inner .form-default .btn:active {
+  background: #006bdd;
+}
+.faq-form2 .faq-form-inner .request-success-wrapper {
+  color: #012843;
+}
+.faq-form2 .img-wrapper {
+  left: 0;
+  /*   bottom: 0; */
+  right: auto;
+  top: 0;
+}
+
 .opportunities .heading-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 70px;
 }
 .opportunities .switchers {
   margin-left: 80px;
@@ -1739,4 +1870,199 @@ header.sticky .header-bottom {
 }
 .opportunities .switcher.active {
   color: #FFFFFF;
+}
+
+.opportunities-items {
+  margin-top: 70px;
+  gap: 30px;
+}
+.opportunities-items:not(.active) {
+  display: none;
+}
+
+.opportunities-item {
+  width: calc(25% - 22.5px);
+  border-radius: 20px;
+  background: #F5F5F5;
+  padding: 40px;
+  padding-bottom: 28px;
+  gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.opportunities-item .img-wrapper {
+  width: 50px;
+}
+.opportunities-item .img-wrapper img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.opportunities-item .text {
+  font-family: "Proxima Nova";
+  font-size: 0.7rem;
+  line-height: 133%;
+  letter-spacing: 0.03em;
+}
+
+.news-blog .heading-wrapper {
+  padding-bottom: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog-wrapper + .blog-wrapper {
+  margin-top: 150px;
+}
+
+.news-blog-items {
+  gap: 30px;
+}
+.news-blog-items + .news-blog-items {
+  margin-top: 150px;
+}
+
+.news-blog-item {
+  width: calc(33.3% - 20px);
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+}
+.news-blog-item .img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.news-blog-item .descript {
+  padding: 30px;
+  background: #FFFFFF;
+  gap: 15px;
+}
+.news-blog-item .descript-date {
+  font-size: 0.5rem;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+}
+.news-blog-item .descript-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 159%;
+  font-family: "Proxima Nova";
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.our-clients h2 {
+  padding-bottom: 70px;
+}
+
+.our-cliens-slider {
+  position: relative;
+}
+.our-cliens-slider .swiper-container {
+  overflow: visible;
+}
+.our-cliens-slider .swiper-slide {
+  width: 327px;
+  height: 180px;
+  border-radius: 20px;
+  border: 1px solid #F5F5F5;
+  position: relative;
+}
+.our-cliens-slider .swiper-slide img {
+  max-width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.our-cliens-slider .swiper-navigation {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 70px;
+  gap: 50px;
+}
+
+footer {
+  padding: 100px 0;
+  background: #0F054C;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.footer-left {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 25px;
+}
+.footer-left > .flex-block {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+.footer-left .link {
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid;
+}
+.footer-left .link:hover, .footer-left .link:active {
+  border-color: transparent;
+}
+.footer-left .location {
+  position: relative;
+  padding-left: 40px;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.footer-left .location:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background-image: url(../../media/icons/location-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-logo {
+  width: 187px;
 }/*# sourceMappingURL=index.css.map */
