@@ -192,7 +192,7 @@ input[type="checkbox"] {
         width: 25px;
         height: 25px;
         @include bg-style;
-        background-image: url(../../media/icons/telegram.svg);
+        background-image: url(../media/icons/telegram.svg);
         margin-right: 10px;
         transition: $transition;
     }
@@ -203,7 +203,7 @@ input[type="checkbox"] {
         color: $color-text-white;
 
         &:before {
-            background-image: url(../../media/icons/telegram-white.svg);
+            background-image: url(../media/icons/telegram-white.svg);
         }
     }
 }
