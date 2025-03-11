@@ -5,10 +5,15 @@ footer {
     color: $color-text-white;
 }
 
+.footer-inner {
+    align-items: flex-end;
+}
+
 
 .footer-left {
     @include flex-column;
     gap: 25px;
+    flex: 1;
 
     >.flex-block {
         align-items: center;
@@ -52,4 +57,37 @@ footer {
 
 .footer-logo {
     width: 187px;
+}
+
+.footer-right {
+    margin-left: auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-left: 5rem;
+
+    .img-link {
+        font-size: .65rem;
+        padding-left: 50px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            @include flex-column;
+        }
+
+        &.mail:before {
+            background: url(../media/icons/mail-white.svg);
+        }
+
+        &.phone:before {
+            background: url(../media/icons/phone-white.svg);
+        }
+    }
 }

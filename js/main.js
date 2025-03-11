@@ -477,6 +477,20 @@ jQuery(document).ready(function ($) {
             $('body').on('modal:close', modalElem, function (event, modal) {
                 BlockScroll.close();
 
+                if (modal.$elm.find('.faq-form-inner').length) {
+                    // console.log(modal.$elm)
+                    const successWrapper = modal.$elm.find('.request-success-wrapper')
+                    successWrapper.css('height', '')
+                    successWrapper.hide()
+                    modal.$elm.find('.form-default').css('display', '')
+                    modal.$elm.find('input').val('')
+                    modal.$elm.find('input:checked').prop('checked', false)
+
+                    modal.$elm.find('.invalid').removeClass('invalid')
+                    modal.$elm.find('.invalid-text').remove()
+                    // modal.$elm.find('input:checked')
+
+                }
             })
         }
     }

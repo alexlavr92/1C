@@ -73,6 +73,26 @@
         font-size: .7rem;
         line-height: 150%;
         letter-spacing: 0.03em;
+        gap: 30px;
+
+        >span {
+            flex: 1;
+        }
+
+        >img {
+            width: 60px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    .img-wrapper {
+        width: 30%;
+
+        img {
+            display: block;
+            width: 100%;
+        }
     }
 
     .price {
@@ -93,6 +113,12 @@
             padding: 10px 40px;
             font-weight: $font-bold;
             font-size: .6rem;
+            text-align: center;
+
+            &:first-child {
+                width: 100%;
+
+            }
         }
     }
 }

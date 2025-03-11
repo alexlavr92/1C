@@ -50,5 +50,13 @@
         font-family: $font-title;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+        transition: $transition;
+    }
+
+    &:hover,
+    &:active {
+        .descript-text {
+            color: $color-bg-blue;
+        }
     }
 }

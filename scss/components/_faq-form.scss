@@ -134,6 +134,8 @@
 
         .form-default {
             .default-input-wrapper {
+                max-width: none;
+
                 >label {
                     color: rgba($color-text-body, .7);
                 }
@@ -161,7 +163,9 @@
 
             .btn {
                 color: $color-text-white;
-                background: $color-text-body;
+                background: $color-bg-blue;
+                width: 100%;
+                max-width: none;
 
                 &:hover,
                 &:active {
