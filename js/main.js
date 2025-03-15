@@ -250,7 +250,7 @@ jQuery(document).ready(function ($) {
             const DropDownWrapper = options.headerWrapper.find('.dropdown-elem')
             DropDownWrapper.on('click', function (e) {
                 e.preventDefault()
-                console.log('ок')
+                // console.log('ок')
                 if (options.windowWidth < 1200) {
                     const $this = $(this),
                         $thisParent = $this.closest('.dropdown')
