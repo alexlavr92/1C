@@ -66,6 +66,13 @@ footer {
     gap: 50px;
     padding-left: 5rem;
 
+    @media screen {
+        @media (max-width: 1399px) {
+            flex: 1;
+            width: auto;
+        }
+    }
+
     .img-link {
         font-size: .65rem;
         padding-left: 50px;

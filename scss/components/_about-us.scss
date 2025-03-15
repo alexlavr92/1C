@@ -1,5 +1,9 @@
 .about-us {
-    padding-top: 150px;
+    @media screen {
+        @media (max-width: 1620px) {
+            padding-top: 2vw !important;
+        }
+    }
 }
 
 .about-us-inner {
@@ -7,12 +11,24 @@
 
     h2 {
         flex: 1;
+        padding-right: 3vw;
     }
 
     &+.about-us-inner {
-        margin: 150px 0;
+        padding: 150px 0;
         position: relative;
         // margin-bottom: 10%;
+
+        @media screen {
+            @media (min-width: 2000px) {
+                padding: 10vw 0;
+            }
+
+            @media (max-width: 1530px) {
+                padding: 10vw 0;
+                padding-bottom: 5vw;
+            }
+        }
 
         .img-wrapper {
             left: 0;

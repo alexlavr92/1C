@@ -11,8 +11,8 @@
     .img-wrapper {
         position: absolute;
         right: 0;
-        top: -4vw;
-        width: 37vw;
+        top: -15%;
+        width: 50%;
 
     }
 }
@@ -184,6 +184,13 @@
         /*   bottom: 0; */
         right: auto;
         top: 0;
+
+        @media screen {
+            @media (max-width: 1530px) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 
 }

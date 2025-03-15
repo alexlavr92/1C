@@ -7,6 +7,17 @@
         font-family: $font-title;
         padding-bottom: 40px;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 1rem;
+                padding-bottom: 20px;
+            }
+        }
+
         >span {
             color: $color-bg-blue;
             font-weight: $font-bold;
@@ -17,14 +28,46 @@
         align-items: flex-end;
         gap: 30px;
         row-gap: 0;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                @include flex-column;
+                gap: 25px;
+            }
+        }
     }
 
     .btn {
         margin-left: auto;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 100%;
+                margin-top: 25px;
+            }
+
+            @media (max-width: 767px) {
+                margin-top: 5px;
+            }
+        }
     }
 
     .default-input-wrapper {
-        width: 400px
+        width: 400px;
+
+        @media screen {
+            @media (min-width: 2000px) {
+                width: 30%;
+            }
+
+            @media (max-width: 1500px) {
+                width: 30%;
+            }
+
+            @media (max-width: 1199px) {
+                width: 100%;
+            }
+        }
     }
 
     .request-success-wrapper {
@@ -77,6 +120,12 @@
         letter-spacing: 0.03em;
         padding-bottom: 10px;
         display: block;
+
+        @media screen {
+            @media (max-width: 767px) {
+                font-size: .9rem;
+            }
+        }
     }
 
     .input-default {
@@ -93,6 +142,13 @@
         @include placeholder-color(rgba($color-text-body, .3));
         transition: $transition;
 
+        @media screen {
+            @media (max-width: 767px) {
+                font-size: .9rem;
+                padding: 0 15px;
+            }
+        }
+
         &:hover,
         &:active,
         &.active {
@@ -108,6 +164,12 @@
         width: 100%;
         margin-top: 40px;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                margin-top: 0;
+            }
+        }
+
         .default-checkbox_label {
             font-size: 12px;
             position: relative;
@@ -118,6 +180,7 @@
             >a {
                 color: $color-bg-blue;
                 border-bottom: 1px solid;
+                display: inline;
 
                 &:hover {
                     border-color: transparent;

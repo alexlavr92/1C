@@ -119,6 +119,14 @@
         line-height: 136%;
         letter-spacing: 0.03em;
 
+
+        @media screen {
+            @media (max-width: 1399px) {
+                gap: 30px;
+                flex-grow: 1.2;
+            }
+        }
+
         >.this-number {
             color: $color-bg-blue;
             font-family: $font-title;

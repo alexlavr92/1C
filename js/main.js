@@ -163,18 +163,30 @@ jQuery(document).ready(function ($) {
             // console.log(windowWidth)
             const headerWrapper = this.defaultsOptions.headerWrapper,
                 headerOuter = this.defaultsOptions.headerOuter,
-                headerAddress = headerWrapper.find('.header-address'),
-                headerMenuWrapper = headerWrapper.find('.header-menu-wrapper')
+                headerContacts = headerOuter.find('.header-contacts'),
+                headerTopNav = headerOuter.find('.header-top-nav'),
+                Btntg = headerOuter.find('.btn-tg'),
+                headerNavBottom = headerOuter.find('.header-nav-bottom')
 
             if (windowWidth < 1200) {
-                if (headerWrapper.hasClass('show')) BlockScroll.open()
-
-                headerAddress.appendTo(headerMenuWrapper)
+                if (headerWrapper.hasClass('open')) BlockScroll.open()
+                if (!headerWrapper.hasClass('open')) {
+                    headerTopNav.insertAfter(headerNavBottom)
+                    headerContacts.insertAfter(headerNavBottom)
+                    Btntg.insertAfter(headerNavBottom)
+                    headerOuter.find('.header-bottom').attr('style', '')
+                    $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
+                }
 
             }
             else {
-                headerWrapper.removeClass('show')
-                headerAddress.prependTo(headerWrapper.find('.header-right-wrapper'))
+                if (headerWrapper.hasClass('open')) {
+                    headerWrapper.removeClass('open')
+                    BlockScroll.close()
+                }
+                headerContacts.insertAfter(headerOuter.find('.header-logo'))
+                headerTopNav.appendTo('.header-top .new-container')
+                Btntg.appendTo('.header-top .new-container')
                 $('main').css({ 'margin-top': headerOuter.outerHeight() + 'px' })
             }
         },
@@ -211,16 +223,43 @@ jQuery(document).ready(function ($) {
                 }
 
             })
-            const MenuBtn = options.headerWrapper.find('.header-menu_btn')
+            const MenuBtn = options.headerWrapper.find('.hamburger')
             MenuBtn.on('click', function (e) {
                 if (options.windowWidth < 1200) {
                     // console.log('click')
-                    const $this = $(this)
-                    options.headerWrapper.toggleClass('show')
+                    const $this = $(this),
+                        headerBottom = options.headerWrapper.find('.header-bottom')
+                    options.headerWrapper.toggleClass('open')
+                    if (options.headerWrapper.hasClass('open')) {
+                        headerBottom.slideDown({
+                            complete: function () {
+                                BlockScroll.open()
+                            }
+                        })
+                    }
+                    else {
+                        headerBottom.slideUp({
+                            complete: function () {
+                                BlockScroll.close()
+                            }
+                        })
+                    }
                 }
                 else return false
             })
-
+            const DropDownWrapper = options.headerWrapper.find('.dropdown')
+            DropDownWrapper.on('click', function (e) {
+                e.preventDefault()
+                console.log('ок')
+                if (options.windowWidth < 1200) {
+                    const $this = $(this)
+                    $this.toggleClass('open')
+                    $this.hasClass('open')
+                        ? $this.find('.dropdown-wrapper').slideDown()
+                        : $this.find('.dropdown-wrapper').slideUp()
+                }
+                else return false
+            })
         }
     }
 
