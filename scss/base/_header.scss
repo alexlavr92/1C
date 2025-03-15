@@ -36,7 +36,7 @@ header {
         @media (max-width: 1199px) {
             &.open .header-outer {
                 height: 100vh;
-                overflow: auto;
+                /* padding-bottom: 40px; */
                 display: flex;
                 @include flex-column;
                 // background: $color-bg-main;
@@ -57,7 +57,9 @@ header {
     pointer-events: all;
 
     @media screen {
-        @media (max-width: 1199px) {}
+        @media (max-width: 1199px) {
+            overflow: auto;
+        }
     }
 }
 
@@ -114,7 +116,7 @@ header {
 
         @media (max-width: 1199px) {
             margin-left: 0;
-            margin-bottom: 40px;
+
         }
     }
 
@@ -468,6 +470,8 @@ header {
 
             header.open & {
                 height: 100%;
+                overflow: auto;
+                padding-bottom: 50px;
             }
         }
 
@@ -546,6 +550,7 @@ header {
 
         &:after {
             transform: rotate(-45deg);
+            bottom: 11px;
             right: 1px;
 
             @media screen and (max-width: 767px) {
