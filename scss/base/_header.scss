@@ -114,6 +114,7 @@ header {
 
         @media (max-width: 1199px) {
             margin-left: 0;
+            padding-bottom: 40px;
         }
     }
 
@@ -461,6 +462,8 @@ header {
                     margin-top: 20px;
                 }
             }
+
+
 
 
             header.open & {

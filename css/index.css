@@ -974,6 +974,7 @@ header.sticky .header-bottom {
 @media screen and (max-width: 1199px) {
   .list.header-contacts {
     margin-left: 0;
+    padding-bottom: 40px;
   }
 }
 .list.header-contacts li.location {

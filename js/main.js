@@ -247,16 +247,17 @@ jQuery(document).ready(function ($) {
                 }
                 else return false
             })
-            const DropDownWrapper = options.headerWrapper.find('.dropdown')
+            const DropDownWrapper = options.headerWrapper.find('.dropdown-elem')
             DropDownWrapper.on('click', function (e) {
                 e.preventDefault()
                 console.log('ок')
                 if (options.windowWidth < 1200) {
-                    const $this = $(this)
-                    $this.toggleClass('open')
-                    $this.hasClass('open')
-                        ? $this.find('.dropdown-wrapper').slideDown()
-                        : $this.find('.dropdown-wrapper').slideUp()
+                    const $this = $(this),
+                        $thisParent = $this.closest('.dropdown')
+                    $thisParent.toggleClass('open')
+                    $thisParent.hasClass('open')
+                        ? $thisParent.find('.dropdown-wrapper').slideDown()
+                        : $thisParent.find('.dropdown-wrapper').slideUp()
                 }
                 else return false
             })
