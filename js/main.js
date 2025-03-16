@@ -140,151 +140,6 @@ jQuery(document).ready(function ($) {
 
 
 
-    // Функционал работы Header
-    const InitHeader = {
-        defaultsOptions: {
-            headerWrapper: $('header'),
-            headerOuter: $('.header-outer'),
-            // headerHamburger: $('.header-hamburger'),
-            windowWidth: document.body.clientWidth,
-            lastScrollTop: 0,
-            // headerMob: $('.header-mob'),
-            // topSocials: $('.top-socials')
-        },
-        init: function () {
-            // console.log($(this.HeaderBurger))
-            this.events()
-            // this.checkMargin()
-            // this.checkAdaptive(this.defaultsOptions.windowWidth)
-            // this.checkSticky($(window).scrollTop(), this.defaultsOptions.headerWrapper)
-
-        },
-        checkAdaptive: function (windowWidth) {
-            // console.log(windowWidth)
-            const headerWrapper = this.defaultsOptions.headerWrapper,
-                headerOuter = this.defaultsOptions.headerOuter,
-                headerContacts = headerOuter.find('.header-contacts'),
-                headerTopNav = headerOuter.find('.header-top-nav'),
-                Btntg = headerOuter.find('.btn-tg'),
-                headerNavBottom = headerOuter.find('.header-nav-bottom')
-
-            if (windowWidth < 1200) {
-                if (headerWrapper.hasClass('open')) BlockScroll.open()
-                headerTopNav.insertAfter(headerNavBottom)
-                headerContacts.insertAfter(headerNavBottom)
-                Btntg.insertAfter(headerNavBottom)
-                // headerOuter.find('.header-bottom').attr('style', '')
-                $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
-
-
-            }
-            else {
-                if (headerWrapper.hasClass('open')) {
-                    headerWrapper.removeClass('open')
-                    BlockScroll.close()
-                }
-                headerContacts.insertAfter(headerOuter.find('.header-logo'))
-                headerTopNav.appendTo('.header-top .new-container')
-                Btntg.appendTo('.header-top .new-container')
-                $('main').css({ 'margin-top': headerOuter.outerHeight() + 'px' })
-            }
-        },
-        checkSticky: function (scrollTop, headerOuter, nowWidth, lastScrollTop) {
-            // const headerOuter = headerWrapper.find('.header-top'),
-            //     headerTopHeight = headerTop.innerHeight()
-            if (nowWidth >= 1200) {
-                scrollTop > headerOuter.innerHeight()
-                    ? this.defaultsOptions.headerWrapper.addClass('sticky')
-                    : this.defaultsOptions.headerWrapper.removeClass('sticky')
-            }
-            // else {
-            //     if (scrollTop > lastScrollTop || scrollTop == 0 && $('header').hasClass('sticky')) {
-            //         $('header').removeClass('sticky')
-            //     }
-            //     else if (scrollTop > headerOuter.height() && !$('header').hasClass('sticky')) {
-            //         // upscroll code
-            //         // console.log('fixed')
-            //         $('header').addClass('sticky')
-            //     }
-            // }
-        },
-        events: function () {
-            const $thisObj = this,
-                options = this.defaultsOptions
-            // console.log(options.windowWidth)
-            this.checkAdaptive(options.windowWidth)
-
-            let scrollTop = $(window).scrollTop();
-            $thisObj.checkSticky(scrollTop, options.headerOuter)
-            $(window).on('scroll', function () {
-                scrollTop = $(window).scrollTop();
-                // if (options.windowWidth < 1200) { }
-                // else {
-                if (!$('.jquery-modal').length)
-                    $thisObj.checkSticky(scrollTop, options.headerOuter, options.windowWidth, options.lastScrollTop)
-
-                if (options.windowWidth < 1200) {
-                    options.lastScrollTop = scrollTop;
-                }
-
-                // }
-            })
-            $(window).on('resize', function () {
-                if (options.windowWidth != document.body.clientWidth) {
-                    // console.log(options.windowWidth)
-                    options.windowWidth = document.body.clientWidth
-                    // console.log(options.windowWidth)
-                    // $thisObj.checkMargin()
-                    $thisObj.checkAdaptive(options.windowWidth)
-                }
-
-            })
-            const MenuBtn = options.headerWrapper.find('.hamburger')
-            MenuBtn.on('click', function (e) {
-                if (options.windowWidth < 1200) {
-                    // console.log('click')
-                    const $this = $(this),
-                        headerBottom = options.headerWrapper.find('.header-bottom')
-                    options.headerWrapper.toggleClass('open')
-                    if (options.headerWrapper.hasClass('open')) {
-                        headerBottom.slideDown({
-                            complete: function () {
-                                BlockScroll.open()
-                            }
-                        })
-                    }
-                    else {
-                        headerBottom.slideUp({
-                            complete: function () {
-                                BlockScroll.close()
-                            }
-                        })
-                    }
-                }
-                else return false
-            })
-            const DropDownWrapper = options.headerWrapper.find('.dropdown-elem')
-            DropDownWrapper.on('click', function (e) {
-                e.preventDefault()
-                // console.log('ок')
-                if (options.windowWidth < 1200) {
-                    const $this = $(this),
-                        $thisParent = $this.closest('.dropdown')
-                    $thisParent.toggleClass('open')
-                    $thisParent.hasClass('open')
-                        ? $thisParent.find('.dropdown-wrapper').slideDown()
-                        : $thisParent.find('.dropdown-wrapper').slideUp()
-                }
-                else return false
-            })
-        }
-    }
-
-
-    if ($('header').length) {
-        InitHeader.init()
-    }
-    // ------------------------------------
 
 
 
@@ -780,9 +635,160 @@ jQuery(document).ready(function ($) {
 // console.log(projectsJson)
 
 
+// Функционал работы Header
+const InitHeader = {
+    defaultsOptions: {
+        headerWrapper: $('header'),
+        headerOuter: $('.header-outer'),
+        // headerHamburger: $('.header-hamburger'),
+        windowWidth: document.body.clientWidth,
+        lastScrollTop: 0,
+        // headerMob: $('.header-mob'),
+        // topSocials: $('.top-socials')
+    },
+    init: function () {
+        // console.log($(this.HeaderBurger))
+        this.events()
+        // this.checkMargin()
+        // this.checkAdaptive(this.defaultsOptions.windowWidth)
+        // this.checkSticky($(window).scrollTop(), this.defaultsOptions.headerWrapper)
+
+    },
+    checkAdaptive: function (windowWidth) {
+        // console.log(windowWidth)
+        const headerWrapper = this.defaultsOptions.headerWrapper,
+            headerOuter = this.defaultsOptions.headerOuter,
+            headerContacts = headerOuter.find('.header-contacts'),
+            headerTopNav = headerOuter.find('.header-top-nav'),
+            Btntg = headerOuter.find('.btn-tg'),
+            headerNavBottom = headerOuter.find('.header-nav-bottom')
+
+        if (windowWidth < 1200) {
+            if (headerWrapper.hasClass('open')) BlockScroll.open()
+            headerTopNav.insertAfter(headerNavBottom)
+            headerContacts.insertAfter(headerNavBottom)
+            Btntg.insertAfter(headerNavBottom)
+            // headerOuter.find('.header-bottom').attr('style', '')
+            $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
+
+
+        }
+        else {
+            if (headerWrapper.hasClass('open')) {
+                headerWrapper.removeClass('open')
+                BlockScroll.close()
+            }
+            headerContacts.insertAfter(headerOuter.find('.header-logo'))
+            headerTopNav.appendTo('.header-top .new-container')
+            Btntg.appendTo('.header-top .new-container')
+            $('main').css({ 'margin-top': headerOuter.outerHeight() + 'px' })
+        }
+    },
+    checkSticky: function (scrollTop, headerOuter, nowWidth, lastScrollTop) {
+        // const headerOuter = headerWrapper.find('.header-top'),
+        //     headerTopHeight = headerTop.innerHeight()
+        if (nowWidth >= 1200) {
+            scrollTop > headerOuter.innerHeight()
+                ? this.defaultsOptions.headerWrapper.addClass('sticky')
+                : this.defaultsOptions.headerWrapper.removeClass('sticky')
+        }
+        // else {
+        //     if (scrollTop > lastScrollTop || scrollTop == 0 && $('header').hasClass('sticky')) {
+        //         $('header').removeClass('sticky')
+        //     }
+        //     else if (scrollTop > headerOuter.height() && !$('header').hasClass('sticky')) {
+        //         // upscroll code
+        //         // console.log('fixed')
+        //         $('header').addClass('sticky')
+        //     }
+        // }
+    },
+    events: function () {
+        const $thisObj = this,
+            options = this.defaultsOptions
+        // console.log(options.windowWidth)
+        this.checkAdaptive(options.windowWidth)
+
+        let scrollTop = $(window).scrollTop();
+        $thisObj.checkSticky(scrollTop, options.headerOuter)
+        $(window).on('scroll', function () {
+            scrollTop = $(window).scrollTop();
+            // if (options.windowWidth < 1200) { }
+            // else {
+            if (!$('.jquery-modal').length)
+                $thisObj.checkSticky(scrollTop, options.headerOuter, options.windowWidth, options.lastScrollTop)
+
+            if (options.windowWidth < 1200) {
+                options.lastScrollTop = scrollTop;
+            }
+
+            // }
+        })
+        $(window).on('resize', function () {
+            if (options.windowWidth != document.body.clientWidth) {
+                // console.log(options.windowWidth)
+                options.windowWidth = document.body.clientWidth
+                // console.log(options.windowWidth)
+                // $thisObj.checkMargin()
+                $thisObj.checkAdaptive(options.windowWidth)
+            }
+
+        })
+        const MenuBtn = options.headerWrapper.find('.hamburger')
+        MenuBtn.on('click', function (e) {
+            if (options.windowWidth < 1200) {
+                // console.log('click')
+                const $this = $(this),
+                    headerBottom = options.headerWrapper.find('.header-bottom')
+                options.headerWrapper.toggleClass('open')
+                if (options.headerWrapper.hasClass('open')) {
+                    headerBottom.slideDown({
+                        complete: function () {
+                            BlockScroll.open()
+                        }
+                    })
+                }
+                else {
+                    headerBottom.slideUp({
+                        complete: function () {
+                            BlockScroll.close()
+                        }
+                    })
+                }
+            }
+            else return false
+        })
+        const DropDownWrapper = options.headerWrapper.find('.dropdown-elem')
+        DropDownWrapper.on('click', function (e) {
+            e.preventDefault()
+            // console.log('ок')
+            if (options.windowWidth < 1200) {
+                const $this = $(this),
+                    $thisParent = $this.closest('.dropdown')
+                $thisParent.toggleClass('open')
+                $thisParent.hasClass('open')
+                    ? $thisParent.find('.dropdown-wrapper').slideDown()
+                    : $thisParent.find('.dropdown-wrapper').slideUp()
+            }
+            else return false
+        })
+    }
+}
+
+
+
+// ------------------------------------
+
+
 
 $(window).on('resize', function () {
     docWidth = document.body.clientWidth
     // console.log(docWidth)
+})
+
+$(window).on('load', function () {
+    if ($('header').length) {
+        InitHeader.init()
+    }
 })
 
