@@ -905,6 +905,9 @@ header.sticky .header-bottom {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    position: relative;
+    top: auto;
+    left: auto;
   }
 }
 
@@ -934,6 +937,7 @@ header.sticky .header-bottom {
 @media screen and (max-width: 1199px) {
   .header-top {
     padding: 20px 0;
+    overflow: visible;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1311,7 +1315,6 @@ header.sticky .header-bottom {
   .header-bottom {
     display: none;
     padding: 40px 0;
-    overflow: auto;
   }
   .header-bottom > * {
     font-size: 1rem;
@@ -1356,9 +1359,10 @@ header.sticky .header-bottom {
 }
 @media screen and (max-width: 1199px) {
   header.open .header-bottom {
-    height: 100%;
-    overflow: auto;
     padding-bottom: 50px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 }
 @media screen and (max-width: 767px) {

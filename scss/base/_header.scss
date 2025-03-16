@@ -39,6 +39,9 @@ header {
                 /* padding-bottom: 40px; */
                 display: flex;
                 @include flex-column;
+                position: relative;
+                top: auto;
+                left: auto;
                 // background: $color-bg-main;
             }
         }
@@ -75,6 +78,7 @@ header {
     @media screen {
         @media (max-width: 1199px) {
             padding: 20px 0;
+            overflow: visible;
         }
 
         @media (max-width: 767px) {
@@ -440,7 +444,7 @@ header {
         @media (max-width: 1199px) {
             display: none;
             padding: 40px 0;
-            overflow: auto;
+            // overflow: auto;
 
             >* {
                 font-size: 1rem;
@@ -469,9 +473,10 @@ header {
 
 
             header.open & {
-                height: 100%;
-                overflow: auto;
+                // height: 100%;
+                // overflow: auto;
                 padding-bottom: 50px;
+                flex: 1;
             }
         }
 
