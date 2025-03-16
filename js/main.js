@@ -190,12 +190,24 @@ jQuery(document).ready(function ($) {
                 $('main').css({ 'margin-top': headerOuter.outerHeight() + 'px' })
             }
         },
-        checkSticky: function (scrollTop, headerOuter) {
+        checkSticky: function (scrollTop, headerOuter, nowWidth, lastScrollTop) {
             // const headerOuter = headerWrapper.find('.header-top'),
             //     headerTopHeight = headerTop.innerHeight()
-            scrollTop > headerOuter.innerHeight()
-                ? this.defaultsOptions.headerWrapper.addClass('sticky')
-                : this.defaultsOptions.headerWrapper.removeClass('sticky')
+            if (nowWidth >= 1200) {
+                scrollTop > headerOuter.innerHeight()
+                    ? this.defaultsOptions.headerWrapper.addClass('sticky')
+                    : this.defaultsOptions.headerWrapper.removeClass('sticky')
+            }
+            // else {
+            //     if (scrollTop > lastScrollTop || scrollTop == 0 && $('header').hasClass('sticky')) {
+            //         $('header').removeClass('sticky')
+            //     }
+            //     else if (scrollTop > headerOuter.height() && !$('header').hasClass('sticky')) {
+            //         // upscroll code
+            //         // console.log('fixed')
+            //         $('header').addClass('sticky')
+            //     }
+            // }
         },
         events: function () {
             const $thisObj = this,
@@ -209,8 +221,13 @@ jQuery(document).ready(function ($) {
                 scrollTop = $(window).scrollTop();
                 // if (options.windowWidth < 1200) { }
                 // else {
-                if (!$('.jquery-modal').length && !$('header.show').length)
-                    $thisObj.checkSticky(scrollTop, options.headerOuter)
+                if (!$('.jquery-modal').length)
+                    $thisObj.checkSticky(scrollTop, options.headerOuter, options.windowWidth, options.lastScrollTop)
+
+                if (options.windowWidth < 1200) {
+                    options.lastScrollTop = scrollTop;
+                }
+
                 // }
             })
             $(window).on('resize', function () {
@@ -745,6 +762,20 @@ jQuery(document).ready(function ($) {
             }
         })
     })
+
+
+    //Оработчик клика на кнопку "наверх"//
+    $(".btn-up").on("click", function (e) {
+        e.preventDefault();
+        $("body,html").animate(
+            {
+                scrollTop: 0,
+            },
+            800
+        );
+        return false;
+    });
+    //----------------------//
 }) // end ready
 
 // console.log(projectsJson)

@@ -883,20 +883,33 @@ header {
     -webkit-transition-property: max-height, padding !important;
     transition-property: max-height, padding !important;
   }
-}
-header.sticky .header-bottom {
-  -webkit-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
-}
-@media screen {
-  header {
-    position: fixed;
+  header.sticky .header-bottom {
+    -webkit-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media screen and (max-width: 1199px) {
-  header.open .header-outer {
+  header {
+    position: fixed;
+    height: auto;
+  }
+  header.open {
     height: 100%;
-    /* padding-bottom: 40px; */
+  }
+}
+
+.header-outer {
+  width: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: all;
+}
+@media screen and (max-width: 1199px) {
+  .header-outer {
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -917,16 +930,6 @@ header.sticky .header-bottom {
   }
 }
 
-.header-outer {
-  width: 100%;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: all;
-}
-
 .header-top {
   max-height: 200px;
   padding: 30px 0 20px;
@@ -934,17 +937,6 @@ header.sticky .header-bottom {
   width: 100%;
   overflow: hidden;
   background: #ffffff;
-}
-@media screen and (max-width: 1199px) {
-  .header-top {
-    padding: 20px 0;
-    overflow: visible;
-  }
-}
-@media screen and (max-width: 767px) {
-  .header-top {
-    padding: 10px 0;
-  }
 }
 .header-top > .new-container {
   -webkit-box-align: center;
@@ -957,6 +949,18 @@ header.sticky .header-bottom {
 @media screen and (max-width: 1530px) {
   .header-top .btn {
     margin-left: 30px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .header-top {
+    padding: 20px 0;
+    overflow: visible;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-top {
+    padding: 10px 0;
   }
 }
 
@@ -1044,6 +1048,41 @@ header.sticky .header-bottom {
           align-items: center;
   gap: 50px;
 }
+.header-top-nav > a {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid transparent;
+  line-height: 150%;
+}
+.header-top-nav > a:active {
+  color: #0A509D;
+}
+@media screen and (min-width: 1200px) {
+  .header-top-nav > a:hover, .header-top-nav > a:active {
+    color: #0A509D;
+    border-color: #0A509D;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .header-top-nav > a {
+    padding: 20px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: none;
+  }
+  .header-top-nav > a:not(:last-child) {
+    border-bottom: 1px solid rgba(1, 40, 67, 0.4);
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-top-nav > a {
+    padding: 15px 0;
+    font-size: 0.8rem;
+  }
+}
 @media screen and (max-width: 1530px) {
   .header-top-nav {
     gap: 30px;
@@ -1065,39 +1104,6 @@ header.sticky .header-bottom {
     width: 100%;
     margin-top: 0;
     gap: 0;
-  }
-  .header-top-nav > a {
-    padding: 20px 0;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-}
-@media screen and (max-width: 1199px) and (max-width: 767px) {
-  .header-top-nav > a {
-    padding: 15px 0;
-    font-size: 0.8rem;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .header-top-nav > a:hover, .header-top-nav > a:active {
-    border: none;
-  }
-  .header-top-nav > a:not(:last-child) {
-    border-bottom: 1px solid rgba(1, 40, 67, 0.4);
-  }
-}
-.header-top-nav > a {
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  border-bottom: 1px solid transparent;
-  line-height: 150%;
-}
-@media screen and (min-width: 1200px) {
-  .header-top-nav > a:hover, .header-top-nav > a:active {
-    border-color: #012843;
   }
 }
 
@@ -1145,10 +1151,16 @@ header.sticky .header-bottom {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.header-bottom .header-nav-bottom > .list > li > a:hover, .header-bottom .header-nav-bottom > .list > li > a:active,
-.header-bottom .header-nav-bottom .dropdown-elem:hover,
+.header-bottom .header-nav-bottom > .list > li > a:active,
 .header-bottom .header-nav-bottom .dropdown-elem:active {
   color: #0A509D;
+}
+@media screen and (min-width: 1200px) {
+  .header-bottom .header-nav-bottom > .list > li > a:hover, .header-bottom .header-nav-bottom > .list > li > a:active,
+  .header-bottom .header-nav-bottom .dropdown-elem:hover,
+  .header-bottom .header-nav-bottom .dropdown-elem:active {
+    color: #0A509D;
+  }
 }
 @media screen and (max-width: 1199px) {
   .header-bottom .header-nav-bottom > .list > li > a,
@@ -1366,6 +1378,23 @@ header.sticky .header-bottom {
         -ms-flex: 1;
             flex: 1;
   }
+  .header-bottom .dropdown.open {
+    padding-bottom: 30px;
+  }
+  .header-bottom .dropdown.open .dropdown-elem {
+    color: #0A509D;
+    margin-bottom: 20px;
+  }
+  .header-bottom .dropdown.open .dropdown-elem:after {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    top: 30px;
+  }
+}
+@media screen and (max-width: 1199px) and (max-width: 767px) {
+  .header-bottom .dropdown.open .dropdown-elem:after {
+    top: 21px;
+  }
 }
 @media screen and (max-width: 767px) {
   .header-bottom {
@@ -1450,25 +1479,6 @@ header.open .hamburger:after {
   }
 }
 
-@media screen and (max-width: 1199px) {
-  .header-nav-bottom .dropdown.open {
-    padding-bottom: 30px;
-  }
-  .header-nav-bottom .dropdown.open .dropdown-elem {
-    color: #0A509D;
-    margin-bottom: 20px;
-  }
-  .header-nav-bottom .dropdown.open .dropdown-elem:after {
-    -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
-    top: 30px;
-  }
-}
-@media screen and (max-width: 1199px) and (max-width: 767px) {
-  .header-nav-bottom .dropdown.open .dropdown-elem:after {
-    top: 21px;
-  }
-}
 .top-section {
   background: linear-gradient(85deg, #4650f6 0%, #141b8c 100%);
   padding: 100px 0 200px;
