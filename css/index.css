@@ -1289,7 +1289,7 @@ header {
 }
 @media screen and (max-width: 1199px) {
   .header-bottom .header-nav-bottom .dropdown-column .title {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 .header-bottom .header-nav-bottom .dropdown-column .list a {
