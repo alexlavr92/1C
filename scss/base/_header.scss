@@ -33,15 +33,18 @@ header {
     }
 
     @media screen {
+        position: fixed;
+
         @media (max-width: 1199px) {
             &.open .header-outer {
-                height: 100vh;
+                height: 100%;
                 /* padding-bottom: 40px; */
                 display: flex;
                 @include flex-column;
                 position: relative;
                 top: auto;
                 left: auto;
+                overflow: auto;
                 // background: $color-bg-main;
             }
         }
@@ -59,11 +62,6 @@ header {
     z-index: 0;
     pointer-events: all;
 
-    @media screen {
-        @media (max-width: 1199px) {
-            overflow: auto;
-        }
-    }
 }
 
 
@@ -220,9 +218,14 @@ header {
         border-bottom: 1px solid transparent;
         line-height: 150%;
 
-        &:hover,
-        &:active {
-            border-color: $color-text-body;
+        @media screen {
+            @media (min-width: 1200px) {
+
+                &:hover,
+                &:active {
+                    border-color: $color-text-body;
+                }
+            }
         }
 
         // font-size: .8rem;
@@ -475,7 +478,7 @@ header {
             header.open & {
                 // height: 100%;
                 // overflow: auto;
-                padding-bottom: 50px;
+                padding-bottom: 200px;
                 flex: 1;
             }
         }

@@ -888,9 +888,14 @@ header.sticky .header-bottom {
   -webkit-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
 }
+@media screen {
+  header {
+    position: fixed;
+  }
+}
 @media screen and (max-width: 1199px) {
   header.open .header-outer {
-    height: 100vh;
+    height: 100%;
     /* padding-bottom: 40px; */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -908,6 +913,7 @@ header.sticky .header-bottom {
     position: relative;
     top: auto;
     left: auto;
+    overflow: auto;
   }
 }
 
@@ -919,11 +925,6 @@ header.sticky .header-bottom {
   left: 0;
   z-index: 0;
   pointer-events: all;
-}
-@media screen and (max-width: 1199px) {
-  .header-outer {
-    overflow: auto;
-  }
 }
 
 .header-top {
@@ -1094,8 +1095,10 @@ header.sticky .header-bottom {
   border-bottom: 1px solid transparent;
   line-height: 150%;
 }
-.header-top-nav > a:hover, .header-top-nav > a:active {
-  border-color: #012843;
+@media screen and (min-width: 1200px) {
+  .header-top-nav > a:hover, .header-top-nav > a:active {
+    border-color: #012843;
+  }
 }
 
 .header-bottom {
@@ -1359,7 +1362,7 @@ header.sticky .header-bottom {
 }
 @media screen and (max-width: 1199px) {
   header.open .header-bottom {
-    padding-bottom: 50px;
+    padding-bottom: 200px;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
