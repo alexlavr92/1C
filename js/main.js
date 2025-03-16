@@ -170,13 +170,12 @@ jQuery(document).ready(function ($) {
 
             if (windowWidth < 1200) {
                 if (headerWrapper.hasClass('open')) BlockScroll.open()
-                if (!headerWrapper.hasClass('open')) {
-                    headerTopNav.insertAfter(headerNavBottom)
-                    headerContacts.insertAfter(headerNavBottom)
-                    Btntg.insertAfter(headerNavBottom)
-                    // headerOuter.find('.header-bottom').attr('style', '')
-                    $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
-                }
+                headerTopNav.insertAfter(headerNavBottom)
+                headerContacts.insertAfter(headerNavBottom)
+                Btntg.insertAfter(headerNavBottom)
+                // headerOuter.find('.header-bottom').attr('style', '')
+                $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
+
 
             }
             else {
