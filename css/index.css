@@ -957,6 +957,9 @@ header {
     overflow: visible;
     z-index: 1;
   }
+  .header-top .btn {
+    display: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .header-top {
@@ -990,6 +993,9 @@ header {
 @media screen and (max-width: 1199px) {
   .list.header-contacts {
     margin-left: 0;
+  }
+  .header-top .list.header-contacts {
+    display: none;
   }
 }
 .list.header-contacts li.location {
@@ -1104,6 +1110,9 @@ header {
     width: 100%;
     margin-top: 0;
     gap: 0;
+  }
+  .header-top .header-top-nav {
+    display: none;
   }
 }
 
