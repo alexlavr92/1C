@@ -174,7 +174,7 @@ jQuery(document).ready(function ($) {
                     headerTopNav.insertAfter(headerNavBottom)
                     headerContacts.insertAfter(headerNavBottom)
                     Btntg.insertAfter(headerNavBottom)
-                    headerOuter.find('.header-bottom').attr('style', '')
+                    // headerOuter.find('.header-bottom').attr('style', '')
                     $('main').css({ 'margin-top': headerOuter.find('.header-top').outerHeight() + 'px' })
                 }
 

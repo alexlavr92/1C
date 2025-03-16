@@ -1362,7 +1362,6 @@ header.sticky .header-bottom {
 }
 @media screen and (max-width: 1199px) {
   header.open .header-bottom {
-    padding-bottom: 200px;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
