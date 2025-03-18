@@ -15,6 +15,16 @@
         width: 50%;
 
     }
+
+    @media screen {
+        @media (max-width: 1199px) {
+            padding: 10vw 0;
+            margin: 5vw 0;
+
+        }
+
+
+    }
 }
 
 .faq-form-inner {
@@ -87,6 +97,12 @@
                     border-color: $color-text-body;
                 }
             }
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    max-width: none;
+                }
+            }
         }
 
         .btn {
@@ -104,6 +120,13 @@
                 color: $color-text-body;
 
             }
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
         }
 
     }
@@ -115,6 +138,28 @@
         letter-spacing: 0.03em;
         display: none;
     }
+
+    @media screen {
+        @media (max-width: 1199px) {
+            .faq-form:not(.faq-form2) & {
+                @include flex-block;
+                @include flex-column;
+                gap: 0;
+                width: 100%;
+
+                .img-wrapper {
+                    order: 1;
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                    width: 70%;
+                    margin-top: 20px;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
 }
 
 .faq-form2 {

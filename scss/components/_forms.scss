@@ -77,10 +77,29 @@
         text-transform: uppercase;
         display: none;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                text-transform: initial;
+                font-size: 1.2rem;
+                letter-spacing: 0.03em;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+
         span {
             display: block;
             position: relative;
             padding-left: 50px;
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    padding-left: 0;
+                    padding-top: 50px;
+                }
+            }
 
             &:before {
                 content: '';
@@ -92,6 +111,14 @@
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
+
+                @media screen {
+                    @media (max-width: 1199px) {
+                        top: 0;
+                        transform: none;
+                    }
+                }
+
             }
         }
     }

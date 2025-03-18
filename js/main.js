@@ -3,6 +3,7 @@
 
 
 let docWidth = document.body.clientWidth
+// console.log(docWidth)
 
 // Функционал блокировки скрола при открытии модального окна
 const BlockScroll = {
@@ -318,13 +319,13 @@ jQuery(document).ready(function ($) {
                     RequestSuccess.fadeIn({
                         start: function () {
                             if (docWidth < 1200 && !$this.closest('.modal').length)
-                                window.scrollTo(0, $this.closest('.form-inner-wrapper').offset().top - $('.header-outer').innerHeight() - 100)
+                                window.scrollTo(0, $this.closest('.form-inner').offset().top - $('.header-outer').innerHeight() - 50)
                             $this.hide()
-                            if (docWidth >= 1200) {
-                                $(this).css({
-                                    'height': $thisFormHeight + 'px',
-                                })
-                            }
+                            // if (docWidth >= 1200) {
+                            $(this).css({
+                                'height': $thisFormHeight + 'px',
+                            })
+                            // }
                         },
                         /*   complete: function () {
                               console.log($this.offset().top)
@@ -549,10 +550,13 @@ jQuery(document).ready(function ($) {
             this.events(options)
         },
         hideProgramsItems: function () {
+            let HideLength = docWidth >= 1200 ? 9 : docWidth >= 768 ? 6 : 4
             const ProgramsItems = $('.programs-item')
+            ProgramsItems.removeClass('hide')
+            ProgramsItems.closest('.programs-items').find('.btn-more-wrapper').remove()
             console.log(ProgramsItems.length)
-            if (ProgramsItems.length > 9) {
-                ProgramsItems.eq(8).nextAll().addClass('hide')
+            if (ProgramsItems.length > HideLength) {
+                ProgramsItems.eq(HideLength - 1).nextAll().addClass('hide')
                 const BtnMore = '<div href=javascript: void(0) class="btn-more-wrapper"><a href="javascript: void(0)" class="btn-more">Показать полностью</a></div>'
                 if (!ProgramsItems.closest('.programs-items').find('.btn-more-wrapper').length)
                     $(BtnMore).appendTo(ProgramsItems.closest('.programs-items'))
@@ -567,6 +571,7 @@ jQuery(document).ready(function ($) {
                 $(this).addClass('active')
 
                 // Тут можно написать Ajax запрос
+                // if (docWidth >= 768)
                 ThisObj.hideProgramsItems()
             })
             $('body').on('click', '.programs-items .btn-more', function (e) {
@@ -586,9 +591,16 @@ jQuery(document).ready(function ($) {
                     $this.text('Скрыть')
                 }
                 else {
+                    // let CurrentScrollTop = $(window).scrollTop()
                     HidePrograms.hide()
+                    // let NowScrollTop = $(window).scrollTop()
+                    // console.log(CurrentScrollTop, NowScrollTop)
+                    // window.scrollTo(0, CurrentScrollTop - NowScrollTop)
                     $this.text('Показать полностью')
                 }
+            })
+            $(window).on('resize', function (e) {
+                ThisObj.hideProgramsItems()
             })
         }
     }
@@ -596,6 +608,7 @@ jQuery(document).ready(function ($) {
 
     if ($('.programs .tabs-switchers a').length) {
         Programs.init()
+        // if (docWidth >= 768)
         Programs.hideProgramsItems()
     }
 
@@ -782,7 +795,8 @@ const InitHeader = {
 
 
 $(window).on('resize', function () {
-    docWidth = document.body.clientWidth
+    if (docWidth != document.body.clientWidth)
+        docWidth = document.body.clientWidth
     // console.log(docWidth)
 })
 

@@ -3,15 +3,40 @@
         @media (max-width: 1620px) {
             padding-top: 2vw !important;
         }
+
+        @media (max-width: 767px) {
+            padding-top: 40px !important;
+        }
     }
 }
 
 .about-us-inner {
     align-items: center;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            @include flex-column;
+
+            >* {
+                width: 100%;
+            }
+        }
+    }
+
     h2 {
         flex: 1;
         padding-right: 3vw;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                padding-right: 0;
+                padding-bottom: 50px;
+            }
+
+            @media (max-width: 767px) {
+                @include text-center;
+            }
+        }
     }
 
     &+.about-us-inner {
@@ -28,6 +53,18 @@
                 padding: 10vw 0;
                 padding-bottom: 5vw;
             }
+
+            @media (max-width: 1199px) {
+                padding: 0;
+                padding-top: 100px;
+                @include flex-block;
+                @include flex-column;
+                gap: 30px;
+            }
+
+            @media (max-width: 767px) {
+                padding-top: 80px;
+            }
         }
 
         .img-wrapper {
@@ -38,6 +75,21 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    transform: none;
+                    width: 80%;
+                    margin-left: auto;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+            }
         }
 
         .w-big {
@@ -49,6 +101,11 @@
 .about-us-columns {
     gap: 30px;
 
+    @media (max-width: 767px) {
+        @include flex-column;
+        gap: 15px;
+    }
+
 }
 
 .about-us-column {
@@ -56,10 +113,20 @@
     gap: 30px;
     width: calc(50% - 15px);
 
+    @media (max-width: 767px) {
+        width: 100%;
+        gap: 15px;
+        @include flex-column;
+    }
+
     >div {
         padding: 40px;
         background: $color-bg-grey;
         border-radius: 20px;
+
+        @media (max-width: 1199px) {
+            padding: 40px 20px;
+        }
 
         &.flex-block {
             @include flex-column;
@@ -76,6 +143,17 @@
         font-weight: $font-semibold;
         text-transform: uppercase;
         padding-bottom: 15px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+        }
     }
 
     .text {
@@ -83,6 +161,16 @@
         line-height: 150%;
         letter-spacing: 0.03em;
         color: rgba($color-text-body, 0.6);
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: .8rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
+        }
 
         >a {
             color: $color-bg-blue;
@@ -99,17 +187,48 @@
     .list {
         li:not(:first-child) {
             margin-top: 5px;
+
+            @media screen {
+                @media (min-width: 768px) and (max-width: 1199px) {
+                    margin-top: 15px;
+                }
+            }
         }
 
         li {
             align-items: center;
             gap: 15px;
             font-size: .8rem;
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    // font-size: 1rem;
+
+                    >span {
+                        flex: 1;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    font-size: 14px;
+
+                    >img {
+                        width: 30px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                }
+            }
         }
 
         &+.text {
             margin-top: auto;
 
+            @media screen {
+                @media (max-width: 767px) {
+                    margin-top: 20px;
+                }
+            }
         }
     }
 }
@@ -129,5 +248,28 @@
         line-height: 150%;
         letter-spacing: 0.03em;
         color: rgba($color-text-body, 0.6);
+    }
+
+    @media screen {
+
+        @media (max-width: 1199px) {
+            width: 100%;
+            margin-left: 0;
+
+            .text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .text {
+                font-size: 14px;
+                @include text-center;
+            }
+
+            h2 {
+                padding-bottom: 20px !important;
+            }
+        }
     }
 }
