@@ -932,6 +932,8 @@ header {
   header {
     position: fixed;
     height: auto;
+    -webkit-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
   }
   header.open {
     height: 100%;

@@ -30,6 +30,7 @@ header {
         @media (max-width: 1199px) {
             position: fixed;
             height: auto;
+            box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
 
             &.open {
                 height: 100%;
