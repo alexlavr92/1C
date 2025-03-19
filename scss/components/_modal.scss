@@ -1,5 +1,13 @@
 .jquery-modal.blocker {
     z-index: 11;
+
+    @media screen {
+        @media (max-width: 767px) {
+            padding: 0;
+            width: 100%;
+            max-width: none;
+        }
+    }
 }
 
 
@@ -9,6 +17,16 @@
     border-radius: 20px;
     padding: 0;
 
+    @media screen {
+        @media (max-width: 767px) {
+            padding: 0;
+            width: 100%;
+            border-radius: 0;
+            max-width: none;
+            min-height: 100%;
+        }
+    }
+
     a.close-modal {
         top: 20px;
         right: 20px;
@@ -17,6 +35,14 @@
     .modal-wrapper {
         padding: 40px;
         padding-top: 80px;
+
+        @media screen {
+            @media (max-width: 767px) {
+                padding: 40px 15px;
+                padding-top: 80px;
+
+            }
+        }
 
         .faq-form-inner {
             width: 100%;

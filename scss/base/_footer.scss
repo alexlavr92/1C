@@ -3,10 +3,33 @@ footer {
     background: #0F054C;
     width: 100%;
     color: $color-text-white;
+
+    @media screen {
+        @media (max-width: 1199px) {
+            padding: 80px 0;
+        }
+    }
 }
 
 .footer-inner {
     align-items: flex-end;
+
+    @media screen {
+        @media (max-width: 1199px) {
+            @include flex-column;
+            gap: 30px;
+            position: relative;
+            padding-bottom: 50px;
+
+            >* {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            gap: 50px;
+        }
+    }
 }
 
 
@@ -18,6 +41,19 @@ footer {
     >.flex-block {
         align-items: center;
         gap: 50px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            @media (max-width: 767px) {
+                @include flex-column;
+                align-items: center;
+                gap: 30px;
+            }
+        }
     }
 
     .link {
@@ -26,6 +62,20 @@ footer {
         letter-spacing: 0.03em;
         color: rgba($color-text-white, .4);
         border-bottom: 1px solid;
+
+        @media screen and (max-width: 1199px) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        @media screen and (max-width: 767px) {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            display: inline;
+        }
 
         &:hover,
         &:active {
@@ -71,12 +121,33 @@ footer {
             flex: 1;
             width: auto;
         }
+
+        @media (max-width: 1199px) {
+            padding-left: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 767px) {
+            @include flex-column;
+            gap: 30px;
+            /*   max-width: 70%;
+            margin: 0 auto; */
+            align-items: center;
+        }
     }
 
     .img-link {
         font-size: .65rem;
         padding-left: 50px;
         position: relative;
+
+        @media screen {
+            @media (max-width: 767px) {
+                font-size: .7rem;
+            }
+        }
+
 
         &:before {
             content: '';

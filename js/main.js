@@ -112,17 +112,17 @@ jQuery(document).ready(function ($) {
                 //     clickable: true,
                 //     type: 'bullets',
                 // },
-                // breakpoints: {
-                //     1199: {
-                //         slidesPerView: 1,
-                //         slidesPerGroup: 1,
-                //     },
-                //     767: {
-                //         spaceBetween: 15,
-                //         slidesPerView: 1,
-                //         slidesPerGroup: 1,
-                //     },
-                // },
+                breakpoints: {
+                    1199: {
+                        spaceBetween: 20,
+                        // slidesPerGroup: 1,
+                    },
+                    767: {
+                        spaceBetween: 20,
+                        // slidesPerView: 1,
+                        // slidesPerGroup: 1,
+                    },
+                },
                 // autoplay: {
                 //     delay: 5000,
                 //     disableOnInteraction: false,
@@ -319,7 +319,7 @@ jQuery(document).ready(function ($) {
                     RequestSuccess.fadeIn({
                         start: function () {
                             if (docWidth < 1200 && !$this.closest('.modal').length)
-                                window.scrollTo(0, $this.closest('.form-inner').offset().top - $('.header-outer').innerHeight() - 50)
+                                window.scrollTo(0, $this.closest('.faq-form-inner').offset().top - $('.header-outer').innerHeight() - 50)
                             $this.hide()
                             // if (docWidth >= 1200) {
                             $(this).css({

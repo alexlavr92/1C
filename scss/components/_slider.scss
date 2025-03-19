@@ -1,6 +1,16 @@
 .our-clients {
     h2 {
         padding-bottom: 70px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                padding-bottom: 40px;
+            }
+
+            @media (max-width: 767px) {
+                padding-bottom: 30px;
+            }
+        }
     }
 }
 
@@ -26,6 +36,18 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 45vw;
+                height: 24vw;
+            }
+
+            @media (max-width: 767px) {
+                width: 82vw;
+                height: 38vw;
+            }
+        }
     }
 
     .swiper-navigation {
@@ -34,5 +56,11 @@
         right: 0;
         margin-bottom: 70px;
         gap: 50px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                display: none;
+            }
+        }
     }
 }
