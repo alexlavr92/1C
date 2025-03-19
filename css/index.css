@@ -2415,7 +2415,7 @@ header.open .hamburger:after {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../../media/icons/success.svg);
+  background-image: url(../media/icons/success.svg);
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
