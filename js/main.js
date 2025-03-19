@@ -318,8 +318,9 @@ jQuery(document).ready(function ($) {
                         $thisFormHeight = $this.innerHeight()
                     RequestSuccess.fadeIn({
                         start: function () {
+                            const FormInner = $this.closest('.form-inner').length ? $this.closest('.form-inner') : $this.closest('.faq-form-inner')
                             if (docWidth < 1200 && !$this.closest('.modal').length)
-                                window.scrollTo(0, $this.closest('.faq-form-inner').offset().top - $('.header-outer').innerHeight() - 50)
+                                window.scrollTo(0, FormInner.offset().top - $('.header-outer').innerHeight() - 50)
                             $this.hide()
                             // if (docWidth >= 1200) {
                             $(this).css({
