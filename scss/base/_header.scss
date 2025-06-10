@@ -165,14 +165,14 @@ header {
 }
 
 .header-logo {
-    width: 187px;
+    width: 158px;
 
     @media screen and (max-width: 1199px) {
-        width: 20vw;
+        width: 15vw;
     }
 
     @media screen and (max-width: 767px) {
-        width: 34vw;
+        width: 25vw;
     }
 }
 
@@ -270,6 +270,8 @@ header {
                 }
             }
         }
+
+
 
         >.list>li>a,
         .dropdown-elem {
@@ -527,6 +529,10 @@ header {
 
 
 .hamburger {
+    &+.btn-tg {
+        margin-left: auto;
+    }
+
     @media screen and (min-width: 1200px) {
         display: none;
     }
