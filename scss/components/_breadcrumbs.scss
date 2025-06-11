@@ -1,0 +1,38 @@
+.breadcrumbs-wrapper {}
+
+.breadcrumbs-inner ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: $font-body;
+    font-size: .6rem;
+    color: $color-text-white;
+
+    li:not(:last-child) {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            right: -21px;
+            top: 4px;
+            border-top: 1px solid $color-text-white;
+            border-right: 1px solid $color-text-white;
+            transform: rotate(45deg);
+        }
+    }
+
+    a {
+        color: rgba($color-text-white, .6);
+
+        &:hover {
+            color: $color-text-white;
+        }
+    }
+
+}

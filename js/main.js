@@ -249,9 +249,13 @@ jQuery(document).ready(function ($) {
         defaultsOptions: {
             FormsElems: $('.form-default')
         },
+        formSubjectInit: function (formSubjectText) {
+            this.formSubject = formSubjectText
+        },
         submit: function (options) {
             var options = $.extend(this.defaultsOptions, options)
             // console.log(options)
+            const $thisObj = this
             options.FormsElems.on('submit', function (e) {
                 e.preventDefault()
                 let EditInputWrapper = function (input, invalidText) {
@@ -298,6 +302,14 @@ jQuery(document).ready(function ($) {
 
                 if (InvalidCount == 0) {
                     const formData = new FormData()
+                    let textarea
+
+                    if ($this.find('textarea').length) {
+                        textarea = $this.find('textarea')
+                        console.log(textarea)
+                        AllRequiredInputs = AllRequiredInputs.add(textarea)
+                    }
+                    //  console.log(AllRequiredInputs)
                     $.each(AllRequiredInputs, function () {
                         let $thisVal = this.value
                         if (this.getAttribute('name') == 'input-phone') {
@@ -305,7 +317,9 @@ jQuery(document).ready(function ($) {
                         }
                         formData.append(this.getAttribute('name'), $thisVal)
                     })
-                    formData.append('form-type', $this.attr('data-type'))
+                    if (!$thisObj.formSubject || $thisObj.formSubject == '')
+                        formData.append('form-type', $this.attr('type'))
+                    else formData.append('form-title', $thisObj.formSubject)
                     for (let [name, value] of formData) {
                         console.log(`${name} = ${value}`)
                         // alert(`${name} = ${value}`); // key1=value1, потом key2=value2
@@ -326,6 +340,7 @@ jQuery(document).ready(function ($) {
                             $(this).css({
                                 'height': $thisFormHeight + 'px',
                             })
+                            $thisObj.formSubjectInit('')
                             // }
                         },
                         /*   complete: function () {
@@ -389,6 +404,7 @@ jQuery(document).ready(function ($) {
             })
             $('body').on('modal:close', modalElem, function (event, modal) {
                 BlockScroll.close();
+                Forms.formSubjectInit('')
 
                 if (modal.$elm.find('.faq-form-inner').length) {
                     // console.log(modal.$elm)
@@ -409,11 +425,23 @@ jQuery(document).ready(function ($) {
     }
 
 
-    $('.modal-open').on('click', function (e) {
+    $('body').on('click', '.modal-open', function (e) {
         e.preventDefault()
         const $this = $(this),
             thisHash = $this.attr('data-modal')
         // console.log(thisHash)
+        let thisText
+        if ($this.closest('.dropdown-column').length)
+            thisText = $this.text()
+        else if ($this.closest('.programs-item').length)
+            thisText = $this.closest('.programs-item').find('.title > span').text()
+        else if ($this.closest('.its-price-item').length)
+            thisText = $this.closest('.its-price-item').find('.title').text()
+        else if ($this.closest('.detail_info-offer').length)
+            thisText = $this.closest('.top-section').find('h1').text()
+        else thisText = $this.text()
+        // console.log($this.text())
+        Forms.formSubjectInit(thisText)
         ModalElem.init({
             // targetElem: $this,
             modalHash: thisHash
@@ -643,6 +671,19 @@ jQuery(document).ready(function ($) {
         );
         return false;
     });
+    //----------------------//
+
+
+    // Accordeon function
+    $('body').on('click', '.accordeon-wrapper .accordeon-title', function (e) {
+        e.preventDefault()
+        const $this = $(this),
+            $thisAccordeonWrapp = $this.closest('.accordeon-wrapper')
+        $thisAccordeonWrapp.toggleClass('open')
+        $thisAccordeonWrapp.hasClass('open')
+            ? $thisAccordeonWrapp.find('.accordeon-content').slideDown()
+            : $thisAccordeonWrapp.find('.accordeon-content').slideUp()
+    })
     //----------------------//
 }) // end ready
 

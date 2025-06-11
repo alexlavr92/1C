@@ -78,6 +78,10 @@
                 }
             }
 
+            &.invalid .input-default {
+                border-color: red;
+            }
+
             &.--conf {
                 margin-top: 0;
 
@@ -266,5 +270,21 @@
             }
         }
     }
+
+}
+
+
+textarea {
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+    padding: 20px 40px;
+    background: #F5F5F5;
+    color: #012843;
+    border-color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 14px;
+    @include placeholder-color(rgba($color-text-body, .3));
+    outline: none;
 
 }

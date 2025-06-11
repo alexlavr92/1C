@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport"
+        content="minimum-scale=1.0, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="1С:Бухгалтерия предприятия 8.3 проф">
+    <title>1С:Бухгалтерия предприятия 8.3 проф</title>
+
+    <!-- Style Connect -->
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/plugins/select2.min.css">
+    <!-- Swiper CSS-->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/plugins/swiper.min.css"> -->
+    <!-- Modal CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/plugins/jquery.modal.min.css">
+    <!-- AOS CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/plugins/aos.css">
+
+    <!-- LightGallery -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/lightgallery.min.css" /> -->
+
+
+    <!-- ScrollBar -->
+    <link rel="stylesheet" type="text/css" href="./css/plugins/jquery.scrollbar.css" />
+
+    <!-- Style CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/detail_page.css">
+
+
+</head>
+
+
+<body ontouchstart="" class="detail-page flex-block">
+    <header id="top">
+        <div class="header-outer">
+            <div class="header-top">
+                <div class="new-container flex-block">
+                    <div class="header-logo">
+                        <img src="./media/header-logo.png" alt="">
+                    </div>
+                    <ul class="list header-contacts flex-block">
+                        <li class="location">Красноярск</li>
+                        <li class="phone"><a href="tel: 89823222944">8(982)-322-29-44</a></li>
+                    </ul>
+                    <div class="header-top-nav flex-block">
+                        <a href="javascript: void(0)">о нас</a>
+                        <a href="javascript: void(0)">блог</a>
+                        <a href="javascript: void(0)">контакты</a>
+                    </div>
+                    <a href="javascript: void(0)" class="btn btn-contur btn-tg">связаться с нами</a>
+                    <a href="javascript: void(0)" class="hamburger"><span></span></a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="new-container">
+                    <nav class="flex-block header-nav-bottom">
+                        <ul class="list flex-block">
+                            <li class="dropdown">
+                                <div class="dropdown-elem">программы</div>
+                                <div class="dropdown-wrapper">
+                                    <div class="dropdown-block flex-block">
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">Все программы</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Программы 1С</a></li>
+                                            </ul>
+                                            <div class="title">Бухгалтерия и Налоговый учет</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия 8</a></li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия КОРП</a></li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия ПРОФ</a></li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия Базовая версия</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия Базовая для 1</a></li>
+                                                <li><a href="javascript: void(0)">1С: БизнесСтарт</a></li>
+                                                <li><a href="javascript: void(0)">1С: Предприниматель</a></li>
+                                                <li><a href="javascript: void(0)">1С: Упрощенка</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">Бухгалтерия для НКО</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Рарус Бухгалтерия НКО</a></li>
+                                                <li><a href="javascript: void(0)">1С: Гаражи</a></li>
+                                                <li><a href="javascript: void(0)">1С: Садовод</a></li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия СНТ</a></li>
+                                            </ul>
+                                            <div class="title">1С Зарплата и кадры</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Зарплата и управление персоналом
+                                                        8</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">1С: ЗУП 8 КОРП</a></li>
+                                                <li><a href="javascript: void(0)">1С: ЗУП 8 ПРОФ</a></li>
+                                                <li><a href="javascript: void(0)">1С: ЗУП 8 Базовая версия</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">1С: Торговля и склад</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Управление Торговлей 8</a></li>
+                                                <li><a href="javascript: void(0)">1С: Розница 8</a></li>
+                                                <li><a href="javascript: void(0)">1С: Комплект прикладных рещений на
+                                                        5</a>
+                                                </li>
+                                            </ul>
+                                            <div class="title">Комплексная автоматизация</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Управление Нашей Фирмой 8</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">1С: Комплексная автоматизация 8</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">1С: ERP Управление предприятием</a>
+                                                </li>
+                                            </ul>
+                                            <div class="title">Документооборот</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Документооборот 8</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">CRM системы</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Битрикс 24</a></li>
+                                                <li><a href="javascript: void(0)">1С: CRM</a></li>
+                                            </ul>
+                                            <div class="title">лицензии</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Лицензии 1С</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Лицензии 1С КОРП</a></li>
+                                                <li><a href="javascript: void(0)">1С: Сервер МИНИ на 5</a></li>
+                                                <li><a href="javascript: void(0)">Сервер 1С</a></li>
+                                                <li><a href="javascript: void(0)">1С: Корпоративный инструментальный
+                                                        пакет
+                                                        8</a></li>
+                                                <li><a href="javascript: void(0)">Калькулятор для расчета РКЛ</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <div class="dropdown-elem">1С в облаке</div>
+                                <div class="dropdown-wrapper">
+                                    <div class="dropdown-block flex-block">
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">Облако компании 1С</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Аренда 1С</a></li>
+                                                <li><a href="javascript: void(0)">1С: Фреш</a></li>
+                                                <li><a href="javascript: void(0)">1С: Бухгалтерия Фреш</a></li>
+                                                <li><a href="javascript: void(0)">1С: Фреш Зарплата и Управление
+                                                        персоналом предприятия 8</a></li>
+                                                <li><a href="javascript: void(0)">1С: Управление торговлей Фреш</a></li>
+                                                <li><a href="javascript: void(0)">1С: Фреш УНФ Управление нашей
+                                                        фирмой</a></li>
+                                                <li><a href="javascript: void(0)">1С: Розница Фреш</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">сторонние облачные сервисы</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: ГРМ</a></li>
+                                                <li><a href="javascript: void(0)">1С: Управление торговлей в облаке</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">услуги в облаке 1с</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Переход в облако 1С</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <div class="dropdown-elem">Услуги</div>
+                                <div class="dropdown-wrapper">
+                                    <div class="dropdown-block flex-block">
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">каталог услуг 1С</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Услуги 1С</a></li>
+                                            </ul>
+                                            <div class="title">услуги 1С</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Внедрение 1С</a></li>
+                                                <li><a href="javascript: void(0)">Реальная Автоматизация</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Апгрейд 1С</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Апгрейд с ИТС ТЕХНО на ПРОФ</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Доработка 1С</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Перенос данных в 1С</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Маркировка 1С</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">Настройка программ 1с</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Настройка 1С</a></li>
+                                                <li><a href="javascript: void(0)">Настройка 1С: Бухгалтерия</a></li>
+                                                <li><a href="javascript: void(0)">Настройка 1СУНФ</a></li>
+                                                <li><a href="javascript: void(0)">Настройка 1СУТ</a></li>
+                                                <li><a href="javascript: void(0)">Настройка 1С КА</a></li>
+                                            </ul>
+                                            <div class="title">Линия консультаций</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Линия консультаций 1С:ИТС</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">сопровождение 1с:предприятия</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">1С: Комплект поддержки</a></li>
+                                                <li><a href="javascript: void(0)">Тарифы 1С:ИТС</a></li>
+                                                <li><a href="javascript: void(0)">1С КП Базовый</a></li>
+                                                <li><a href="javascript: void(0)">1С КП ПРОФ</a></li>
+                                                <li><a href="javascript: void(0)">КП (1С:ИТС) Отраслевой</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-column flex-block">
+                                            <div class="title">сопровождение 1с:предприятия</div>
+                                            <ul class="list">
+                                                <li><a href="javascript: void(0)">Обслуживание 1С</a></li>
+                                                <li><a href="javascript: void(0)">Обслуживание 1С: Бухгалтерии 8</a>
+                                                </li>
+                                                <li><a href="javascript: void(0)">Обслуживание 1С: ЗУП</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">сервисы</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="top-section" id='top-section'>
+            <div class="breadcrumbs-wrapper">
+                <div class="new-container">
+                    <div class="breadcrumbs-inner">
+                        <ul class="flex-block">
+                            <li><a href="/">Главная</a></li>
+                            <li><span>1С:Бухгалтерия предприятия 8.3 проф</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="new-container">
+                <h1>1С:Бухгалтерия 8 проф</h1>
+                <div class="detail_info-wrapper flex-block">
+                    <div class="img-wrapper">
+                        <img src="./media/img/detail_page/detail_img.png" alt="">
+                    </div>
+                    <div class="w-big flex-block">
+                        <div class="detail_info-descript">
+                            <div class="title">О товаре</div>
+                            <div class="text">1С:Бухгалтерия 8 КОРП – наиболее полная версия программы для автоматизации
+                                регламентированного учета. Предназначена для компаний, которые имеют в своей структуре
+                                обособленные подразделения.</div>
+                            <ul class="list">
+                                <li data-before="Категория:" class="flex-block"><span>Бухгалтерский учет</span></li>
+                                <li data-before="Поставка:" class="flex-block"><span>Коробка, Электронная</span></li>
+                                <li data-before="Тип защиты:" class="flex-block"><span>Программный</span></li>
+                                <li data-before="Версия:" class="flex-block"><span>КОРП</span></li>
+                                <li data-before="Число рабочих мест:" class="flex-block"><span>15</span></li>
+                                <li data-before="Срок действия лицензии:" class="flex-block"><span>Бессрочная</span>
+                                </li>
+                                <li data-before="Совместимость с ОС:" class="flex-block"><span>Windows, Linux</span>
+                                </li>
+                                <li data-before="Разрядность:" class="flex-block"><span>32/64-bit</span></li>
+                            </ul>
+                            <a href="#programs_detail" class="btn-more btn-animate">Все характеристики</a>
+                        </div>
+                        <div class="detail_info-offer">
+                            <div class="price">
+                                <div class="this-number"><span>51700</span> <span class="rub">q</span></div>
+                            </div>
+                            <ul class="list">
+                                <li class="flex-block">
+                                    <img src="./media/icons/reload.svg" alt="">
+                                    <span>Регулярные обновления</span>
+                                </li>
+                                <li class="flex-block">
+                                    <img src="./media/icons/support.svg" alt="">
+                                    <span>Техническую поддержку</span>
+                                </li>
+                                <li class="flex-block">
+                                    <img src="./media/icons/config.svg" alt="">
+                                    <span>Доработки конфигурации</span>
+                                </li>
+                                <li class="flex-block">
+                                    <img src="./media/icons/learning.svg" alt="">
+                                    <span>Обучение работе в системе</span>
+                                </li>
+                            </ul>
+                            <a href="javascript: void(0)" class="btn btn-blue modal-open"
+                                data-modal="modal-request">купить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="opportunities">
+            <div class="new-container">
+                <h2>Подходящие сервисы и услуги для 1С: "Наименование 1С"</h2>
+                <div class="opportunities-items-wrapper">
+                    <div class="opportunities-items flex-block active">
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/support.svg" alt="">
+                            </div>
+                            <div class="text">Все программы 1С</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/icp.svg" alt="">
+                            </div>
+                            <div class="text">1С Бухгалтерия все версии</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/repeat.svg" alt="">
+                            </div>
+                            <div class="text">Аренда 1С</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/download.svg" alt="">
+                            </div>
+                            <div class="text">1С Фреш</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/cloud.svg" alt="">
+                            </div>
+                            <div class="text">1С Зарплата и кадры</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/layers.svg" alt="">
+                            </div>
+                            <div class="text">Документооборот</div>
+                        </a>
+                        <a href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/barcode.svg" alt="">
+                            </div>
+                            <div class="text">Лицензии 1С</div>
+                        </a>
+                        <a href="javascript: void(0)" href="javascript: void(0)" class="opportunities-item flex-block">
+                            <div class="img-wrapper">
+                                <img src="./media/img/services/iso.svg" alt="">
+                            </div>
+                            <div class="text">Услуги 1С</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grey programs_detail tabs-outer" id="programs_detail">
+            <div class="new-container">
+                <h2>программы и лицензии 1С</h2>
+                <div class="tab-wrapper flex-block">
+                    <div class="tabs-switchers flex-block scrollbar scrollbar-dynamic">
+                        <a href="javascript: void(0)" class="active">Описание</a>
+                        <a href="javascript: void(0)">Характеристики</a>
+                        <a href="javascript: void(0)">Возможности</a>
+                    </div>
+                    <div class="tabs-contents w-big">
+                        <div class="tabs-content active">
+                            <p>1С:Бухгалтерия 8.3 КОРП разработана с учетом потребностей среднего и крупного бизнеса.
+                                Позволяет решать весь комплекс бухгалтерских задач, включая контроль расчетов по
+                                госконтрактам, сдачу консолидированной отчетности в госорганы.</p>
+                            <p>Решение можно доработать под нужды любого предприятия вне зависимости от сферы
+                                деятельности. Количество рабочих мест увеличивается за счет приобретения дополнительных
+                                лицензий.</p>
+                            <p>Компания «ИТС ПЛЮС» предлагает купить 1С Бухгалтерию КОРП с бесплатной установкой и
+                                настройкой. Пользователям доступны для варианта поставки: коробочная и электронная.
+                                Сделать заказ можно по телефону 8 (800) 555-98-32.</p>
+                            <b>Поддержка, настройка, доработка</b>
+                            <p>Покупатели 1С:Бухгалтерии предприятия 8 КОРП могут получить 3 месяца бесплатного
+                                обслуживания 1C и доступ к 25 дополнительным сервисам, упрощающим работу в системе. Они
+                                позволяют:</p>
+                            <ul>
+                                <li>Оперативно отправлять отчетность.</li>
+                                <li>Проверять контрагентов по ИНН.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                            </ul>
+                            <p>По окончании льготного периода необходимо заключить договор на обслуживание. Кроме того,
+                                компания «ИТС ПЛЮС» оказывает дополнительно следующие услуги:</p>
+                            <ul>
+                                <li>Внедрение системы — комплексная автоматизация учета на предприятии.</li>
+                                <li>Переход на КОРП версию — корректный перенос всех данных, определение прав доступа
+                                    пользователей, обучение работе.</li>
+                                <li>Настройка конфигурации — индивидуальная настройка в соответствии с нуждами
+                                    организации. Синхронизация с другими решениями.</li>
+                                <li>Проверка работоспособности — выявление, исправление ошибок. Повышение эффективности.
+                                </li>
+                                <li>Доработка решения — внесение дополнений в код, добавление новых функций, обработок,
+                                    отчетов.</li>
+                            </ul>
+                            <p>Перечень оказываемых услуг, итоговую цену 1С:Бухгалтерии 8 КОРП уточняйте у наших
+                                консультантов по номеру <a href="tel:8 (800) 555-98-32">8 (800) 555-98-32</a></p>
+                        </div>
+                        <div class="tabs-content">
+                            <div class="detail_characters-wrapper flex-block">
+                                <div class="detail_characters-column">
+                                    <div class="title">Основные</div>
+                                    <ul class="list detail_characters-list">
+                                        <li data-before="Категория:"><span>Бухгалтерский учет</span></li>
+                                        <li data-before="Поставка:"><span>Коробка, Электронная</span></li>
+                                        <li data-before="Тип защиты:"><span>Программный</span></li>
+                                        <li data-before="Версия:"><span>КОРП</span></li>
+                                        <li data-before="Число рабочих мест:"><span>15</span></li>
+                                        <li data-before="Срок действия лицензии:"><span>Бессрочная</span></li>
+                                        <li data-before="Совместимость с ОС:"><span>Windows, Linux</span></li>
+                                        <li data-before="Разрядность:"><span>32/64-bit</span></li>
+                                    </ul>
+                                </div>
+                                <div class="detail_characters-column">
+                                    <div class="title">Возможности</div>
+                                    <ul class="list detail_characters-list">
+                                        <li data-before="Категория:"><span>Бухгалтерский учет</span></li>
+                                        <li data-before="Поставка:"><span>Коробка, Электронная</span></li>
+                                        <li data-before="Тип защиты:"><span>Программный</span></li>
+                                        <li data-before="Версия:"><span>КОРП</span></li>
+                                        <li data-before="Число рабочих мест:"><span>15</span></li>
+                                        <li data-before="Срок действия лицензии:"><span>Бессрочная</span></li>
+                                        <li data-before="Совместимость с ОС:"><span>Windows, Linux</span></li>
+                                        <li data-before="Разрядность:"><span>32/64-bit</span></li>
+                                        <li data-before="Число рабочих мест:"><span>15</span></li>
+                                        <li data-before="Срок действия лицензии:"><span>Бессрочная</span></li>
+                                        <li data-before="Совместимость с ОС:"><span>Windows, Linux</span></li>
+                                        <li data-before="Разрядность:"><span>32/64-bit</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-content">
+                            <p>1C БП КОРП максимально упрощает работу бухгалтера, сокращая число ошибок за счет
+                                автоматического заполнения данных, гибкой настройки и обработок. Документация, отчеты в
+                                госорганы отправляются прямо из программы.</p>
+                            <b>Функциональные возможности конфигурации</b>
+                            <ul>
+                                <li>Оперативно отправлять отчетность.</li>
+                                <li>Проверять контрагентов по ИНН.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                            </ul>
+                            <p>Кадры и зарплата</p>
+                            <ul>
+                                <li>Оперативно отправлять отчетность.</li>
+                                <li>Проверять контрагентов по ИНН.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                            </ul>
+                            <b>Автоматизация всех видов учета</b>
+                            <ul>
+                                <li>Оперативно отправлять отчетность.</li>
+                                <li>Проверять контрагентов по ИНН.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                            </ul>
+                            <p>Благодаря гибким настройкам систему можно адаптировать под нужды предприятия без внесения
+                                изменений в код программного обеспечения. Заказать настройку можно в компании «ИТС
+                                ПЛЮС», заполнив форму на сайте.</p>
+                            <b>Подразделения, филиалы</b>
+                            <p>Главное преимущество решения – возможность осуществлять учет в разрезе подразделений
+                                организации, в том числе и выделенных на отдельный баланс. Расходы, доходы учитываются
+                                по каждой структурной единице. На каждое из них заводится отдельная карточка, данные из
+                                которой автоматически переносятся во все необходимые документы.</p>
+                            <p>В Бухгалтерии версии КОРП при взаимодействии между филиалами используются специальные
+                                документы авизо. Применяемые виды документации:</p>
+                            <ul>
+                                <li>Оперативно отправлять отчетность.</li>
+                                <li>Проверять контрагентов по ИНН.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                                <li>Подписывать документы и обмениваться ими.</li>
+                            </ul>
+                            <p>Реализована возможность ведения кассы. Расчет распределения прибыли формируется
+                                автоматически.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="its">
+            <div class="new-container">
+                <h2>ИТС - Сопровождение 1С:КП*</h2>
+                <div class="sub-title">* Информационно-технологическое сопровождение (ИТС)
+                    Комплексная Поддержка программ 1С (1СКП)</div>
+                <div class="its-price-wrapper">
+                    <!-- <div class="title">Прайс-лист на сопровождение 1С:ИТС</div> -->
+                    <div class="its-price-items">
+                        <div class="its-price-item flex-block">
+                            <div class="title">ИТС Медицина на 6 месяцев Льготный (при непрерывном продлении)</div>
+                            <ul class="list">
+                                <li>Продление договора ИТС</li>
+                            </ul>
+                            <div class="price flex-block">
+                                <div class="this-number">от <span>4210</span> <span class="rub">q</span>/мес</div>
+                                <a href="javascript: void(0)" class="btn btn-blue modal-open"
+                                    data-modal="modal-request">купить</a>
+                            </div>
+                        </div>
+                        <div class="its-price-item flex-block">
+                            <div class="title">ИТС Медицина на 6 месяцев Льготный (с прерыванием)</div>
+                            <ul class="list">
+                                <li>Возобновление договора после перерыва</li>
+                            </ul>
+                            <div class="price flex-block">
+                                <div class="this-number">от <span>5 052</span> <span class="rub">q</span>/мес</div>
+                                <a href="javascript: void(0)" class="btn btn-blue modal-open"
+                                    data-modal="modal-request">купить</a>
+                            </div>
+                        </div>
+                        <div class="its-price-item flex-block">
+                            <div class="title">ИТС Базовый на 6 месяцев Льготный при продлении (рекомендуемая цена)
+                            </div>
+                            <ul class="list">
+                                <li>Продление договора ИТС</li>
+                            </ul>
+                            <div class="price flex-block">
+                                <div class="this-number">от <span>1 639</span> <span class="rub">q</span>/мес</div>
+                                <a href="javascript: void(0)" class="btn btn-blue modal-open"
+                                    data-modal="modal-request">купить</a>
+                            </div>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a href="javascript: void(0)" class="btn-more">Узнать все цены на сопровождение</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="catalog-more">
+            <div class="new-container">
+                <h2>Вместе с 1С:Бухгалтерия проф покупают</h2>
+                <div class="catalog-more_items flex-block">
+                    <a href="javascript: void(0)" class="catalog-more_item">
+                        <div class="img-wrapper">
+                            <img src="./media/img/detail_page/catalog-more_img.png" alt="">
+                        </div>
+                        <div class="title">1С:Отчетность</div>
+                        <div class="descript">Регламинтированная отчетность. Обмен данными с налоговыми службами.
+                            Подключение ЭЦП.</div>
+                        <div class="price-btn flex-block">
+                            <div class="price">
+                                <div class="this-number">от <span>3000</span> <span class="rub">q</span></div>
+                            </div>
+                            <div class="btn btn-blue">Купить</div>
+                        </div>
+                    </a>
+                    <a href="javascript: void(0)" class="catalog-more_item">
+                        <div class="img-wrapper">
+                            <img src="./media/img/detail_page/catalog-more_img.png" alt="">
+                        </div>
+                        <div class="title">1С:Подпись</div>
+                        <div class="descript">Лицензия на продукт “1С:Подпись”</div>
+                        <div class="price-btn flex-block">
+                            <div class="price">
+                                <div class="this-number">от <span>900</span> <span class="rub">q</span></div>
+                            </div>
+                            <div class="btn btn-blue">Купить</div>
+                        </div>
+                    </a>
+                    <a href="javascript: void(0)" class="catalog-more_item">
+                        <div class="img-wrapper">
+                            <img src="./media/img/detail_page/catalog-more_img.png" alt="">
+                        </div>
+                        <div class="title">Настройка 1С:Бухгалтерии</div>
+                        <div class="descript">Комплексные услуги по настройке бухгалтерской программы в соответствии с
+                            потребностями фирмы.</div>
+                        <div class="price-btn flex-block">
+                            <div class="price">
+                                <div class="this-number">от <span>1900</span> <span class="rub">q</span></div>
+                            </div>
+                            <div class="btn btn-blue">Купить</div>
+                        </div>
+                    </a>
+                    <a href="javascript: void(0)" class="catalog-more_item">
+                        <div class="img-wrapper">
+                            <img src="./media/img/detail_page/catalog-more_img.png" alt="">
+                        </div>
+                        <div class="title">1С:Контрагент</div>
+                        <div class="descript">Регламинтированная отчетность. Обмен данными с налоговыми службами.
+                            Подключение ЭЦП.</div>
+                        <div class="price-btn flex-block">
+                            <div class="price">
+                                <div class="this-number">от <span>4200</span> <span class="rub">q</span></div>
+                            </div>
+                            <div class="btn btn-blue">Купить</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="grey faq">
+            <div class="new-container">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-wrapper">
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Сколько стоит 1С КОРП? Есть ли разница в цене между коробочной и электронной поставкой?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Компанией куплена 1С:Бухгалтерия КОРП, какие лицензии необходимо приобрести для подключения
+                            новых пользователей?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Необходимо ли заключать договор сопровождения ИТС?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Как ведется учет нескольких организаций?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Каким образом в системе 1С 8 Бухгалтерия КОРП создать обособленное подразделение?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                    <div class="accordeon-wrapper">
+                        <div class="accordeon-title">
+                            Есть ли возможность перейти с Бухгалтерии предприятия 8 ПРОФ на КОРП версию?
+                        </div>
+                        <div class="accordeon-content">
+                            Цена 1С Бухгалтерии предприятия КОРП одинакова для обоих вариантов поставки. Если
+                            программное обеспечение будет использоваться больше, чем на одном рабочем месте, заплатить
+                            придется чуть больше. Расширение количества рабочих мест требует приобретения дополнительных
+                            лицензий.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq-form faq-form2">
+            <div class="new-container">
+                <h2>Не нашли то что нужно? Оставьте заявку и мы проконсультируем!</h2>
+                <div class="faq-form-inner">
+                    <!-- <div class="title">Не нашли то что нужно? Оставьте заявку и мы проконсультируем!</div> -->
+                    <form action="" id="form-top-inner2" class="form-default flex-block"
+                        type="Форма с детальной страницы">
+                        <div class="default-input-wrapper required">
+                            <label for="input-inner-name2">Ваше имя</label>
+                            <input type="text" id="input-inner-name2" name="input-name" class="input-default input-name"
+                                placeholder="Иванов Иван Иванович" />
+                        </div>
+                        <div class="default-input-wrapper required">
+                            <label for="input-inner-phone2">Ваш телефон</label>
+                            <input type="text" id="input-inner-phone2" class="input-default input-phone"
+                                name="input-phone" placeholder="+7 999 999 99 99" inputmode="tel" />
+                        </div>
+                        <div class="default-input-wrapper">
+                            <label for="form-message">Сообщение</label>
+                            <textarea name="message" id="form-message" placeholder="Введите сообщение"></textarea>
+                        </div>
+                        <div class="default-input-wrapper --conf">
+                            <input type="checkbox" id="checkbox-conf2">
+                            <label for="checkbox-conf2" class="default-checkbox_label">Нажимая на кнопку "Оставить
+                                заявку", я принимаю <a href="javascript: void(0)" target="_blank">условия политики
+                                    конфиденциальности</a></label>
+                        </div>
+
+                        <button type="submit" form="form-top-inner2" class="btn btn-сontur">Оставить заявку</button>
+
+                    </form>
+                    <div class="request-success-wrapper">
+                        <span>Благодарим за обращение, перезвоним вам как можно скорее!</span>
+                    </div>
+                </div>
+                <div class="img-wrapper">
+                    <img src="./media/img/faq/img2.png" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="new-container">
+            <div class="footer-inner flex-block">
+                <div class="footer-left flex-block">
+                    <div class="flex-block">
+                        <a href="/" class="footer-logo">
+                            <img src="./media/footer-logo.png" alt="">
+                        </a>
+                        <div class="location">
+                            Красноярск
+                        </div>
+                    </div>
+                    <a href="javascript: void(0)" class="link">Политика конфиденциальности</a>
+                </div>
+                <div class="footer-right w-big flex-block">
+                    <a href="javascript: void(0)" class="img-link mail">
+                        1SCC@mail.ru
+                    </a>
+                    <a href="javascript: void(0)" class="img-link phone">
+                        8(982)-322-29-44
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="javascript: void(0)" class="btn-up"></a>
+    <div class="modal modal-custom" id="modal-request">
+        <div class="modal-wrapper">
+            <div class="faq-form-inner">
+                <div class="title">оставьте заявку
+                    и мы свяжемся с вами в ближайшее время</div>
+                <form action="" id="form-modal" class="form-default flex-block">
+                    <div class="default-input-wrapper required">
+                        <label for="input-modal-name">Ваше имя</label>
+                        <input type="text" id="input-modal-name" class="input-default input-name"
+                            placeholder="Иванов Иван Иванович" />
+                    </div>
+                    <div class="default-input-wrapper required">
+                        <label for="input-modal-phone">Ваш телефон</label>
+                        <input type="text" id="input-modal-phone" class="input-default input-phone" name="input-phone"
+                            placeholder="+7 999 999 99 99" inputmode="tel" />
+                    </div>
+                    <div class="default-input-wrapper --conf">
+                        <input type="checkbox" id="checkbox-conf-modal">
+                        <label for="checkbox-conf-modal" class="default-checkbox_label">Нажимая на кнопку "Оставить
+                            заявку", я принимаю <a href="javascript: void(0)" target="_blank">условия политики
+                                конфиденциальности</a></label>
+                    </div>
+                    <button type="submit" form="form-modal" class="btn btn-сontur">Оставить заявку</button>
+
+                </form>
+                <div class="request-success-wrapper">
+                    <span>Вы отправили заявку, мы свяжемся с вами в ближайшее время!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Jquery -->
+<script type=" text/javascript" src="./js/librarys/jquery-3.3.1.min.js"></script>
+<!-- current-device -->
+<script type="text/javascript" src="./js/plugins/current-device/device.js"></script>
+<!-- inputmask -->
+<script type="text/javascript" src="./js/plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- jquery cookie -->
+<!-- <script type="text/javascript" src="./js/plugins/jquery-cookie/jquery.cookie.js"></script> -->
+<!-- select2-->
+<script type="text/javascript" src="./js/plugins/select2/select2.min.js"></script>
+<!-- jquery modal -->
+<script type="text/javascript" src="./js/plugins/jquery.modal/jquery.modal.min.js"></script>
+<!-- swiper-->
+<!-- <script type="text/javascript" src="./js/plugins/swiper/swiper.min.js"></script> -->
+<!-- aos -->
+<script type="text/javascript" src="./js/plugins/aos/aos.js"></script>
+
+<!-- scrollbar -->
+<script type="text/javascript" src="./js/plugins/scrollbar/jquery.scrollbar.min.js"></script>
+<!--lightgallery-->
+<!-- <script type="text/javascript" src="./js/plugins/lightgallery/lightgallery-all.min.js"></script> -->
+
+
+<!-- Main -->
+<script type="text/javascript" src="./js/main.js"></script>
+<!-- Detail Page -->
+<script type="text/javascript" src="./js/detail-page.js"></script>
+
+</html>
