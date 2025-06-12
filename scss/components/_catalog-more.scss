@@ -6,6 +6,13 @@
 
 .catalog-more_items {
     margin: 0 -15px;
+
+    @media screen {
+        @media (max-width: 1199px) {
+            margin: 0;
+            gap: 10px;
+        }
+    }
 }
 
 .catalog-more_item {
@@ -17,6 +24,13 @@
     padding: 25px 20px;
     @include flex-block;
     @include flex-column;
+
+    @media screen {
+        @media (max-width: 1199px) {
+            width: calc(50% - 5px);
+            margin: 0;
+        }
+    }
 
     >* {
         transition: $transition;
@@ -55,6 +69,12 @@
         padding-bottom: 15px;
         // color: $color-bg-blue;
         letter-spacing: 0.03em;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: 1rem;
+            }
+        }
     }
 
     .descript {
@@ -62,6 +82,12 @@
         line-height: 150%;
         letter-spacing: 0.03em;
         margin-bottom: 30px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: .8rem;
+            }
+        }
     }
 
     .price-btn {
@@ -88,6 +114,11 @@
             @media screen {
                 @media (max-width: 1439px) {
                     font-size: 1rem;
+                }
+
+                @media (max-width: 1199px) {
+                    font-size: 1.2rem;
+                    margin: 0 auto;
                 }
             }
         }

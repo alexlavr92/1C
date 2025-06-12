@@ -747,6 +747,11 @@ const InitHeader = {
                 ? this.defaultsOptions.headerWrapper.addClass('sticky')
                 : this.defaultsOptions.headerWrapper.removeClass('sticky')
         }
+        else {
+            scrollTop > $(window).height()
+                ? $('.btn-up').addClass('show')
+                : $('.btn-up').removeClass('show')
+        }
         // else {
         //     if (scrollTop > lastScrollTop || scrollTop == 0 && $('header').hasClass('sticky')) {
         //         $('header').removeClass('sticky')

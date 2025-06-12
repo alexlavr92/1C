@@ -476,7 +476,8 @@ input[type="checkbox"] {
         top: 50%;
     }
 
-    .sticky~& {
+    .sticky~&,
+    &.show {
         opacity: 1;
         visibility: visible;
     }
