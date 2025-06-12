@@ -260,7 +260,7 @@ Theme Version:	1.0
                         font-size: .9rem;
 
                         span {
-                            flex: none;
+                            text-align: left;
                         }
                     }
                 }
@@ -288,7 +288,16 @@ Theme Version:	1.0
 
             .detail_info-descript {
                 width: 100%;
-                padding-left: 0
+                padding-left: 0;
+                font-size: .9rem;
+
+                .title {
+                    font-size: 1.1rem;
+                }
+
+                .btn-more {
+                    font-size: .9rem !important;
+                }
             }
 
             .detail_info-offer {
@@ -297,6 +306,10 @@ Theme Version:	1.0
                 .list {
                     justify-content: flex-start;
                     align-items: flex-start;
+
+                    li {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -359,8 +372,8 @@ Theme Version:	1.0
             flex-direction: row;
             // white-space: nowrap;
             margin: 0 -15px;
-            padding: 0 15px;
-            padding-bottom: 10px;
+            padding: 15px;
+            // padding-bottom: 10px;
             width: calc(100% + 30px);
             vertical-align: top;
             gap: 10px;
@@ -376,6 +389,19 @@ Theme Version:	1.0
             white-space: normal;
             min-height: 35vw;
             vertical-align: top;
+
+            .text {
+                border-bottom: 1px solid rgba($color-bg-blue, .6);
+                display: inline;
+            }
+
+            &:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+
+                .text {
+                    border-color: transparent;
+                }
+            }
 
             // &:not(:last-child) {
             //     margin-right: 7px;
@@ -436,8 +462,13 @@ Theme Version:	1.0
         letter-spacing: 0.03em;
         font-size: .7rem;
 
+        @media screen and (max-width: 767px) {
+            font-size: .9rem;
+        }
+
         p+p,
-        ul+p {
+        ul+p,
+        ul+b {
             margin-top: 15px;
         }
 
@@ -450,6 +481,11 @@ Theme Version:	1.0
             display: block;
             font-family: $font-title;
             font-size: .8rem;
+
+
+            @media screen and (max-width: 767px) {
+                font-size: 1rem;
+            }
         }
 
         p+b {
@@ -502,6 +538,12 @@ Theme Version:	1.0
     align-items: flex-start;
     font-size: .8rem;
 
+    @media screen and (max-width: 767px) {
+        font-size: 1rem;
+        @include flex-column;
+        gap: 30px;
+    }
+
     .detail_characters-column {
         width: calc(50% - 25px);
 
@@ -512,12 +554,24 @@ Theme Version:	1.0
             letter-spacing: 0.03em;
         }
 
+        @media screen and (max-width: 767px) {
+            width: 100%;
+
+            .title {
+                padding-bottom: 15px;
+            }
+        }
+
     }
 
     .detail_characters-list {
         font-size: .7rem;
         // line-height: 150%;
         // letter-spacing: 0.03em;
+
+        @media screen and (max-width: 767px) {
+            font-size: .9rem;
+        }
 
         li {
             justify-content: space-between;
@@ -564,6 +618,13 @@ Theme Version:	1.0
     h2 {
         color: $color-text-white;
         padding-bottom: 50px;
+
+        @media screen {
+            @media (max-width: 767px) {
+                font-size: 25px;
+
+            }
+        }
 
     }
 

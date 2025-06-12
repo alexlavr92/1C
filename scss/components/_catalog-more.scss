@@ -1,6 +1,12 @@
 .catalog-more {
     h2 {
         padding-bottom: 50px;
+
+        @media screen {
+            @media (max-width: 767px) {
+                padding-bottom: 0 !important;
+            }
+        }
     }
 }
 
@@ -10,6 +16,16 @@
     @media screen {
         @media (max-width: 1199px) {
             margin: 0;
+            gap: 10px;
+        }
+
+        @media (max-width: 767px) {
+            flex-wrap: nowrap;
+            overflow: hidden;
+            overflow-x: auto;
+            padding: 30px 15px;
+            margin: 0 -15px;
+            width: calc(100% + 30px);
             gap: 10px;
         }
     }
@@ -29,6 +45,16 @@
         @media (max-width: 1199px) {
             width: calc(50% - 5px);
             margin: 0;
+        }
+
+        @media (max-width: 767px) {
+            min-width: 80vw;
+            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2) !important;
+
+            }
         }
     }
 

@@ -3230,6 +3230,11 @@ textarea:focus::-moz-placeholder {
 textarea:focus:-ms-input-placeholder {
   opacity: 0;
 }
+@media screen and (max-width: 767px) {
+  textarea {
+    padding: 20px 15px;
+  }
+}
 
 .opportunities .heading-wrapper {
   -webkit-box-align: center;
